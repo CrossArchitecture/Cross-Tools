@@ -1,0 +1,18 @@
+{
+    "builtin": "False",
+    "default_enabled": "True",
+    "type": "extension",
+    "rocket_mode_compatible": "True",
+    "name": "Cross-Tools",
+    "description": "A selection of tools for Cross Architecture!",
+    "author": "Erich Domme",
+    "author_profile": "https://github.com/CrossArchitecture",
+    "url": "https://github.com/CrossArchitecture/Cross-Tools",
+    "website": "https://www.cross-architecture.net/",
+    "image": "",
+    "templates": {
+        "author": "",
+        "docpath": ""
+    },
+    "dependencies": []
+}
