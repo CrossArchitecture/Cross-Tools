@@ -2,17 +2,13 @@
     "builtin": "False",
     "default_enabled": "True",
     "type": "extension",
-    "rocket_mode_compatible": "True",
-    "name": "Cross-Tools",
-    "description": "A selection of tools for Cross Architecture!",
-    "author": "Erich Domme",
-    "author_profile": "https://github.com/CrossArchitecture",
-    "url": "https://github.com/CrossArchitecture/Cross-Tools",
-    "website": "https://www.cross-architecture.net/",
+    "rocket_mode_compatible": "False",
+    "name": "EF-Tutor",
+    "description": "Extension from RevitAPI + python series by Erik Frits.",
+    "author": "Erik Frits",
+    "author_profile": "https://github.com/ErikFrits",
+    "url": "https://github.com/ErikFrits/EF-Tutor.git",
+    "website": "https://www.youtube.com/c/ErikFrits",
     "image": "",
-    "templates": {
-        "author": "",
-        "docpath": ""
-    },
     "dependencies": []
 }
