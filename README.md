@@ -9,6 +9,8 @@
 <p><font size="3">
 This repository serves to document all "Cross-Tools", how they work, what is the idea behind them and how they were implemented!</p>
 
+<!-- LINKS -->
+
 <div align="center"><a name="menu"></a>
   <h4>
     <a href="https://www.pinterest.de/cross_architecture/">
@@ -34,6 +36,7 @@ This repository serves to document all "Cross-Tools", how they work, what is the
 </div>
 
 <!-- TABLE OF CONTENTS -->
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
