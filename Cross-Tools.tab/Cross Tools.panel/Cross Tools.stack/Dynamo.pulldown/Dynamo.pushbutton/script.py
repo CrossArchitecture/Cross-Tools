@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-__title__   = "04 - Center Room Tags"
-__author__  = "Erik Frits"
+__title__   = "01 - Center Room Tags"
+__author__  = "Erich Domme"
 __version__ = "Version 1.0"
 __doc__ = """Version = 1.0
-Date    = 03.09.2022
 _____________________________________________________________________
 Description:
 WIP:
@@ -13,7 +12,7 @@ _____________________________________________________________________
 How-to:
 -> Click on Button
 _____________________________________________________________________
-Author:  Erik Frits"""
+Author:  Erich Domme"""
 
 # ╦╔╦╗╔═╗╔═╗╦═╗╔╦╗╔═╗
 # ║║║║╠═╝║ ║╠╦╝ ║ ╚═╗
