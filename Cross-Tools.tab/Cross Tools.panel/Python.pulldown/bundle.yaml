@@ -1,6 +1,6 @@
-context: doc-project
-
 layout:
+  - Python
+  - ---
   - SelCat
   - SelType
   - SelTtbs
@@ -10,8 +10,6 @@ layout:
   - Pre2D
   - ---
   - DeGroup
-  - ---
-  - Python
 
 title: Python
 
