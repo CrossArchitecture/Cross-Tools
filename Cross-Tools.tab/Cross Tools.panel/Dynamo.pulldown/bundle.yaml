@@ -3,10 +3,9 @@ layout:
   - ---
   - Excel
   - ---
-  - WarningManagement
-  - ---
   - DeleteSelectedUnplacedViews
   - ---
+  - WarningManagement
   - ResetGraphicalOverride
 
 title: Dynamo
