@@ -4,6 +4,8 @@ layout:
   - Excel
   - ---
   - WarningManagement
+  - ---
+  - ResetGraphicalOverride
 
 title: Dynamo
 
