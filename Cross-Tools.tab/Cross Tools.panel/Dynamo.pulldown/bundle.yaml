@@ -5,6 +5,8 @@ layout:
   - ---
   - WarningManagement
   - ---
+  - DeleteSelectedUnplacedViews
+  - ---
   - ResetGraphicalOverride
 
 title: Dynamo
