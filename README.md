@@ -148,7 +148,7 @@ Give credit here.
 
 
 ## Contact
-Created by [@Erich Domme](https://www.cross-architecture.net/cxs-team/tgj3b6bpl7ymmlo3ywxlx3d9vytg9r) - feel free to contact me!
+Created by [@Erich Domme](mailto:erich.domme@rwth-aachen.de) - feel free to contact me!
 
 
 <!-- Optional -->
