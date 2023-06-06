@@ -7,7 +7,7 @@
 <div align="center"></div>
 
 <p><font size="3">
-This repository serves to document all "Cross-Tools", how they work, what is the idea behind them and how they were implemented!</p>
+This repository serves to document all "Cross-Tools", how they work, what is the idea behind them and how they were implemented! The project was developed during an internship at Cross Architecture Aachen as part of the Master in Construction and Robotics at RWTH Aachen University. The aim was to implement a set of tools that the entire Cross Architecture team could use to simplify and in many cases automate repetitive, tedious and complicated tasks in their daily work with Revit. These quality of life tools were constantly tested and adapted to the working conditions. </p>
 
 <!-- LINKS -->
 
