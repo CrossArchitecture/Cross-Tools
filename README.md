@@ -70,8 +70,8 @@ This repository serves to document all "Cross-Tools", how they work, what is the
 <h1 align="center">
   Cross-Tools
 </h1>
-> Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+Outline a brief description of your project.
+Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 * [General Info](#general-information)
