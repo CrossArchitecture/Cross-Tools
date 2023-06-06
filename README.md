@@ -143,8 +143,9 @@ To do:
 ## Acknowledgements
 Without these people and their projects, Cross-Tools would not have been possible:
 - [Ehsan Iran-Nejad](https://github.com/eirannejad) with [pyRevit](https://github.com/eirannejad/pyRevit)
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+- [Erik Frits](https://github.com/ErikFrits) with [EF-Tools](https://github.com/ErikFrits/EF-Tools)
+- [Gavin Crump, aussieBIMguru](https://github.com/aussieBIMguru) with [guRoo](https://github.com/aussieBIMguru/guRoo/tree/main/guRoo.tab/Tools.panel)
+- [Marc Anton Dahmen](https://github.com/marcantondahmen) with [revitron](https://github.com/revitron/revitron)
 
 
 ## Contact
