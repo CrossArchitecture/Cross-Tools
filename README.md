@@ -49,9 +49,7 @@ This repository serves to document all "Cross-Tools", how they work, what is the
 * [Contact](#contact)
 <!-- * [License](#license) -->
 
-<h1 align="center">
-  Cross-Tools
-</h1>
+## Cross-Tools
 <p><font size="3">
 Outline a brief description of your project.
 Live demo [_here_](https://www.example.com).
