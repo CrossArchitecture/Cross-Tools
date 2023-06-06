@@ -141,8 +141,8 @@ To do:
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
+Without these people and their projects, Cross-Tools would not have been possible:
+- [Ehsan Iran-Nejad](https://github.com/eirannejad) with [pyRevit](https://github.com/eirannejad/pyRevit)
 - This project was based on [this tutorial](https://www.example.com).
 - Many thanks to...
 
