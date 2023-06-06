@@ -60,7 +60,6 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 3. 
 
 ## Features
-Cross-Tools
 1. Dynamo
   * Beam(s) through input Surface
   * Excel Export
