@@ -62,20 +62,20 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 ## Features
 Cross-Tools
 1. Dynamo
-  1. Beam(s) through input Surface
-  2. Excel Export
-  3. Delete selected unplaced Views
-  4. Warning Management
-  5. Reset Graphical Override
+  * Beam(s) through input Surface
+  * Excel Export
+  * Delete selected unplaced Views
+  * Warning Management
+  * Reset Graphical Override
 2. Python
-  1. Center Room Tag
-  2. Same category as selected
-  3. same type as selected
-  4. Titleblocks on sheets
-  5. Select only categories
-  6. Select only 3D
-  7. Select only 2D
-  8. Deselect grouped elements
+  * Center Room Tag
+  * Same category as selected
+  * same type as selected
+  * Titleblocks on sheets
+  * Select only categories
+  * Select only 3D
+  * Select only 2D
+  * Deselect grouped elements
 
 
 ## Screenshots
