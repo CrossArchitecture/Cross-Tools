@@ -38,7 +38,7 @@ This repository serves to document all "Cross-Tools", how they work, what is the
 
 ## Table of Contents
 * [General Info](#general-information)
-* [Technologies Used](#technologies-used)
+* [Requirements](#requirements)
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
@@ -57,7 +57,7 @@ This repository serves to document all "Cross-Tools", how they work, what is the
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 
-## Technologies Used
+## Requirements
 - Tech 1 - version 1.0
 - Tech 2 - version 2.0
 - Tech 3 - version 3.0
