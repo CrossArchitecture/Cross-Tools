@@ -60,13 +60,13 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 3. 
 
 ## Features
-1. Dynamo
+* Dynamo
   * Beam(s) through input Surface
   * Excel Export
   * Delete selected unplaced Views
   * Warning Management
   * Reset Graphical Override
-2. Python
+* Python
   * Center Room Tag
   * Same category as selected
   * same type as selected
