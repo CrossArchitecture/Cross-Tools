@@ -63,13 +63,13 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 3. 
 
 ## Features
-* Dynamo
+* __Dynamo__
   * Beam(s) through input Surface
   * Excel Export
   * Delete selected unplaced Views
   * Warning Management
   * Reset Graphical Override
-* Python
+* __Python__
   * Center Room Tag
   * Same category as selected
   * same type as selected
@@ -83,7 +83,7 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 ## Screenshots
 <div align="center">
 <img src="./img/Toolbar.PNG" >
-<p>*The "Cross-Tools" Extension visible in the Revit toolbar*</p>
+<p>The "Cross-Tools" Extension visible in the Revit toolbar</p>
 </div>
 <!-- If you have screenshots you'd like to share, include them here. -->
 
