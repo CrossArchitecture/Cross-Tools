@@ -81,7 +81,7 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./img/Toolbar.PNG)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Usage
