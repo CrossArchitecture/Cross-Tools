@@ -81,9 +81,10 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 
 
 ## Screenshots
-<p align="center">
-  <img src="./img/Toolbar.PNG" />
-</p>
+<div align="center">
+<img src="./img/Toolbar.PNG" >
+<p>The "Cross-Tools" Extension visible in the Revit toolbar</p>
+</div>
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Usage
