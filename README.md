@@ -60,7 +60,50 @@ Cross-Tools is a collection of tools based on Dynamo and/or Python. The aim of t
 In order for Cross-Tools to run on your computer, you will need to do a few installations beforehand. Cross-Tools is based on pyRevit and this is where we start.
 1. Make sure you have Autodesk Revit installed on your computer!
 2. Install the latest [pyRevit version](https://github.com/eirannejad/pyRevit/releases), during the development of Cross-Tools the version [v4.8.12.22247](https://github.com/eirannejad/pyRevit/releases/tag/v4.8.12.22247%2B0031) was used. The installation is self-explanatory and very well documented, but a look at the [Notion Page](https://pyrevitlabs.notion.site/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0) is worthwhile.
-3. 
+3. Navigate now to the extensions of pyRevit, under the first tab. 
+<div align="center">
+<img src="./img/Pyrevit_Extensions.PNG" >
+</div>
+
+4. You should now see a list of all extensions that are either written by pyRevit itself or recommended by pyRevit. We now want to add "Cross-Tools" to this list, as shown in the screenshot.<br>
+<div align="center">
+<img src="./img/Pyrevit_Extension_Manager.PNG" >
+</div>
+
+5. To do this, we need to find the location of these listed extensions. They are written inside a json file, with the name "extensions.json"! This should be found here:<br>
+`C:\Users\cxs-user\AppData\Roaming\pyRevit-Master\extensions\`
+
+6. Add the following code snippet at the end of the json file:
+````
+        {
+            "builtin": "False",
+            "default_enabled": "True",
+            "type": "extension",
+            "rocket_mode_compatible": "False",
+            "name": "Cross-Tools",
+            "description": "Extensions for Cross Architecture",
+            "author": "Erich Domme",
+            "author_profile": "https://github.com/CrossArchitecture",
+            "url": "https://github.com/CrossArchitecture/Cross-Tools.git",
+            "website": "https://github.com/CrossArchitecture",
+            "image": "",
+            "dependencies": []
+        }
+````
+Make sure you place the commas correctly!
+````
+{
+    "extensions": [
+        {
+            n. Extension
+        },
+        {
+            Cross-Tools
+        }
+    ]
+}
+````
+
 
 ## Features
 * __Dynamo__
