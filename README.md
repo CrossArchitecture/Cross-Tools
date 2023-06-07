@@ -67,8 +67,10 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 
 4. You should now see a list of all extensions that are either written by pyRevit itself or recommended by pyRevit. We now want to add "Cross-Tools" to this list, as shown in the screenshot.<br>
 <div align="center">
-<img src="./img/Pyrevit_Extension_Manager.PNG" >
+    <img src="./img/Pyrevit_Extensions.PNG">
 </div>
+
+
 
 5. To do this, we need to find the location of these listed extensions. They are written inside a json file, with the name "extensions.json"! This should be found here:<br>
 `C:\Users\cxs-user\AppData\Roaming\pyRevit-Master\extensions\`
@@ -170,3 +172,5 @@ Created by [Erich Domme](mailto:erich.domme@rwth-aachen.de) - feel free to conta
 <!-- This project is open source and available under the [... License](). -->
 
 <!-- You don't have to include all sections - just the one's relevant to your project -->
+
+[Link to Extensions](#extensions)
