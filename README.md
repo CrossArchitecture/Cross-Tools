@@ -119,7 +119,7 @@ Without these people and their projects, Cross-Tools would not have been possibl
 
 
 ## Contact
-Created by [@Erich Domme](mailto:erich.domme@rwth-aachen.de) - feel free to contact me!
+Created by [Erich Domme](mailto:erich.domme@rwth-aachen.de) - feel free to contact me!
 
 
 <!-- Optional -->
