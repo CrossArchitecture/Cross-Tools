@@ -74,7 +74,7 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 <img src="./img/Pyrevit_Extensions.png" >
 </div>
 
-4. You should now see a list of all extensions that are either written by pyRevit itself or recommended by pyRevit, this is the __Pyrevit Extension Manager__. We now want to add "Cross-Tools" to this list!
+4. You should now see a list of all extensions that are either written by pyRevit itself or recommended by pyRevit, this is the __pyRevit Extension Manager__. We now want to add "Cross-Tools" to this list!
 > __The Cross-Tools should not be visible to you yet, as shown in the screenshot below!__<br>
 
 <div align="center">
@@ -119,7 +119,7 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 
 7. Depending on your system it may be enough to reload pyRevit __and__ update it once. However, my recommendation would be a __restart__ of Revit. Any changes will be added automatically. 
 
-8. Navigate to the __Pyrevit Extension Manager__ again. You should now be able to see "Cross-Tools"!
+8. Navigate to the __pyRevit Extension Manager__ again. You should now be able to see "Cross-Tools"!
 
 <div align="center">
 <img src="./img/Pyrevit_Extension_Manager_Step02.png" >
