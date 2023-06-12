@@ -62,14 +62,14 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 2. Install the latest [pyRevit version](https://github.com/eirannejad/pyRevit/releases), during the development of Cross-Tools the version [v4.8.12.22247](https://github.com/eirannejad/pyRevit/releases/tag/v4.8.12.22247%2B0031) was used. The installation is self-explanatory and very well documented, but a look at the [Notion Page](https://pyrevitlabs.notion.site/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0) is worthwhile.
 3. After the successful installation of pyRevit, Navigate now to the extensions of pyRevit, under the first tab. 
 <div align="center">
-<img src="./img/Pyrevit_Extensions.PNG" >
+<img src="./img/Pyrevit_Extensions.png" >
 </div>
 
 4. You should now see a list of all extensions that are either written by pyRevit itself or recommended by pyRevit, this is the __Pyrevit Extension Manager__. We now want to add "Cross-Tools" to this list!
 > __The Cross-Tools should not be visible to you yet, as shown in the screenshot below!__<br>
 
 <div align="center">
-<img src="./img/Pyrevit_Extension_Manager_Step01.PNG" >
+<img src="./img/Pyrevit_Extension_Manager_Step01.png" >
 </div>
 
 
@@ -113,19 +113,19 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 8. Navigate to the __Pyrevit Extension Manager__ again. You should now be able to see "Cross-Tools"!
 
 <div align="center">
-<img src="./img/Pyrevit_Extension_Manager_Step02.PNG" >
+<img src="./img/Pyrevit_Extension_Manager_Step02.png" >
 </div>
 
 9. "Cross-Tools is a private repository. Therefore the check box "Git repository is private" has to be checked! If you want to get the access token, contact [me](mailto:erich.domme@rwth-aachen.de).
 
 <div align="center">
-<img src="./img/Pyrevit_Extension_Manager_Step03.PNG" >
+<img src="./img/Pyrevit_Extension_Manager_Step03.png" >
 </div>
 
 10. In contrast to me, the "Cross-Tools" will not yet be installed in your Revit. You should do this by clicking on Install Extension.
 
 <div align="center">
-<img src="./img/Pyrevit_Extension_Manager_Step04.PNG" >
+<img src="./img/Pyrevit_Extension_Manager_Step04.png" >
 </div>
 
 11. Done! You should now have "cross tools" in Revit!
@@ -157,7 +157,7 @@ Congratulations!</p>
 
 ## Screenshots
 <div align="center">
-<img src="./img/Toolbar.PNG" >
+<img src="./img/Toolbar.png" >
 <p>The "Cross-Tools" Extension visible in the Revit toolbar</p>
 </div>
 
