@@ -55,8 +55,16 @@ Cross-Tools is a collection of tools based on Dynamo and/or Python. The aim of t
 
 ## Requirements
 > It is assumed that you have Autodesk Revit installed on your computer!<br>
-> Revit 2021 has been used for development.
+> Revit 2021 has been used for development!<br>
+> Except for pyRevit, the other requirements are not mandatory! But they might be, as I will be looking at the extensions in the future!
+1. [pyRevit](https://github.com/eirannejad/pyRevit/releases/tag/v4.8.12.22247%2B0031)
+2. [RevitPythonShell](https://github.com/architecture-building-systems/revitpythonshell)
+3. [RevitLookup](https://github.com/jeremytammik/RevitLookup)
+4. [Revitron](https://github.com/revitron/revitron)
+5. [Revitron-UI](https://github.com/revitron/revitron-ui)
+6. [Speckle](https://speckle.systems/)
 
+## Installation
 In order for Cross-Tools to run on your computer, you will need to do a few installations beforehand. Cross-Tools is based on pyRevit and this is where we start.
 1. Make sure you have Autodesk Revit installed on your computer!
 2. Install the latest [pyRevit version](https://github.com/eirannejad/pyRevit/releases), during the development of Cross-Tools the version [v4.8.12.22247](https://github.com/eirannejad/pyRevit/releases/tag/v4.8.12.22247%2B0031) was used. The installation is self-explanatory and very well documented, but a look at the [Notion Page](https://pyrevitlabs.notion.site/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0) is worthwhile.
