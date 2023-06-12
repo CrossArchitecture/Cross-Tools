@@ -86,7 +86,7 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 `C:\Users\cxs-user\AppData\Roaming\pyRevit-Master\extensions\`
 
 6. Add the following code snippet at the end of the json file:
-> :warning: **You will need admin rights here!**: Be very careful here! If in doubt, contact your IT support!
+> :warning: **You will need admin rights here!** Be very careful! If in doubt, contact your IT support!
 ````
         {
             "builtin": "False",
