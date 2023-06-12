@@ -39,6 +39,7 @@ The purpose of this repository is to document all "Cross-Tools", how they work, 
 ## Table of Contents
 * [General Info](#general-information)
 * [Requirements](#requirements)
+* [Installation](#installation)
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
