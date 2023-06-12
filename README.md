@@ -175,7 +175,8 @@ Congratulations!</p>
 
 
 ## Project Status
-Project is: _in progress_ 
+Project is: 
+<span style="color:yellow">**IN PROGRESS!**</span>
 <!-- _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.-->
 
 
