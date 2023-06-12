@@ -125,13 +125,13 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 <img src="./img/Pyrevit_Extension_Manager_Step02.png" >
 </div>
 
-9. "Cross-Tools is a private repository. Therefore the check box "Git repository is private" has to be checked! If you want to get the access token, contact [me](mailto:erich.domme@rwth-aachen.de).
+9. "Cross-Tools" is a private repository. Therefore the check box "Git repository is private" has to be checked! If you want to get the access token, contact [me](mailto:erich.domme@rwth-aachen.de)!
 
 <div align="center">
 <img src="./img/Pyrevit_Extension_Manager_Step03.png" >
 </div>
 
-10. In contrast to me, the "Cross-Tools" will not yet be installed in your Revit. You should do this by clicking on Install Extension.
+10. In contrast to me, "Cross-Tools" will not yet be installed in your Revit. You should do this by clicking on Install Extension.
 
 <div align="center">
 <img src="./img/Pyrevit_Extension_Manager_Step04.png" >
@@ -171,19 +171,15 @@ Congratulations!</p>
 </div>
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
 
-`write-your-code-here`
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: _in progress_ 
+<!-- _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.-->
 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
 Room for improvement:
 - Improvement to be done 1
 - Improvement to be done 2
