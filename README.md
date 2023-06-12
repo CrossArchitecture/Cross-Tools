@@ -128,7 +128,7 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 <img src="./img/Pyrevit_Extension_Manager_Step04.png" >
 </div>
 
-11. Done! You should now have "cross tools" in Revit!
+11. Done! You should now have "Cross-Tools" in Revit!
 
 <p align="center">
   <img src=https://media3.giphy.com/media/rY93u9tQbybks/giphy.gif?cid=ecf05e47eap1wzrxxzfedemp62jtrogwbslh12q694q9hdef&ep=v1_gifs_related&rid=giphy.gif&ct=g.gif alt="animated" />
