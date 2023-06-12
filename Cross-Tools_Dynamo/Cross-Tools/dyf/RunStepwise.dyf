@@ -1,0 +1,215 @@
+{
+  "Uuid": "f257516a-7fc0-4e91-bbec-78af02a0792e",
+  "IsCustomNode": true,
+  "Category": "Cross-Tools",
+  "Description": "Runs your Dynamo Script stepwise with User Interaction.",
+  "Name": "RunStepwise",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n# import windows form \r\n\r\nclr.AddReference(\"System.Windows.Forms\")\r\n#import system drawing \r\nclr.AddReference(\"System.Drawing\")\r\n# import system\r\nimport System\r\nfrom System.Windows.Forms import *\r\nfrom System.Drawing import *\r\n\r\nNameStep = IN[0]\r\ndata = IN[1]\r\n\r\nclass CreateWindow(Form):\r\n\tdef __init__(self):\r\n\t\t\r\n\t\t\r\n\t\tself.Name = \"Form1\"\r\n\t\tself.Text = \"Continue\"\r\n\t\tself.Size = Size(500,200)\r\n\t\tself.CenterToScreen()\r\n\t\tself.AutoScroll = True\r\n\t\t\r\n\t\tv = Label()\r\n\t\tv.Text = str(NameStep)\r\n\t\tv.Location = Point(200,70)\r\n\t\tv.Parent = self\r\n\t\r\n\t\tself.values = []\r\n\t\t\r\n\t\t\r\n\t\t\t\r\n\t\tbutton = Button()\r\n\t\tbutton.Parent = self\r\n\t\tbutton.Text = \"Next step\"\r\n\t\tbutton.Location = Point(400,100)\t\t\r\n\t\t\r\n\t\tbutton.Click += self.ButtonClicked\r\n\t\r\n\tdef ButtonClicked(self, sender, args):\r\n\t\tif sender.Click:\r\n\t\t\tself.Close()\r\n\t\t\t\r\n\t\t\tform2.ShowDialog()\r\n\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\nform = CreateWindow()\r\nApplication.Run(form)\r\nOUT = data",
+      "VariableInputPorts": true,
+      "Id": "503176be88fd4c70804f491028dd185a",
+      "Inputs": [
+        {
+          "Id": "296348a478d04d2899d14c4607b96146",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "47a47a3b69e34ee9bb212d49d488d523",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fd5e64c3c98841b18a2bd30f5fadcb38",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "OUT",
+      "Id": "0e2be804ddee4f9b8273dc02f09d89df",
+      "Inputs": [
+        {
+          "Id": "25db086ba7054a409c2d40e48a08759c",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "NameStep",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "62b7582ed9c34cd781009b850b580f58",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d8c320529c734c70bdb1f332a959b702",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Data",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "5450427c14b84d989df003dd8753d453",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2adfe399e417475d8543ae79c79e876b",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "fd5e64c3c98841b18a2bd30f5fadcb38",
+      "End": "25db086ba7054a409c2d40e48a08759c",
+      "Id": "1e3a42ab5cda47c2a053f3b49fae4e07"
+    },
+    {
+      "Start": "d8c320529c734c70bdb1f332a959b702",
+      "End": "296348a478d04d2899d14c4607b96146",
+      "Id": "23e27b84c6f34d4eb73063b08d0b8dd5"
+    },
+    {
+      "Start": "2adfe399e417475d8543ae79c79e876b",
+      "End": "47a47a3b69e34ee9bb212d49d488d523",
+      "Id": "f483435b41334b2da90cb09e8a19ff18"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.6.1.8786",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Default Camera",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Run Stepwise",
+        "Id": "503176be88fd4c70804f491028dd185a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "0e2be804ddee4f9b8273dc02f09d89df",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 466.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "62b7582ed9c34cd781009b850b580f58",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 38.671771052527276,
+        "Y": -9.757972494114739
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "5450427c14b84d989df003dd8753d453",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 94.312860067928,
+        "Y": 65.939788143116346
+      }
+    ],
+    "Annotations": [],
+    "X": 194.22812332812504,
+    "Y": 401.082120953125,
+    "Zoom": 1.545620359375
+  }
+}
