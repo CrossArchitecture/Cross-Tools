@@ -60,15 +60,18 @@ Cross-Tools is a collection of tools based on Dynamo and/or Python. The aim of t
 In order for Cross-Tools to run on your computer, you will need to do a few installations beforehand. Cross-Tools is based on pyRevit and this is where we start.
 1. Make sure you have Autodesk Revit installed on your computer!
 2. Install the latest [pyRevit version](https://github.com/eirannejad/pyRevit/releases), during the development of Cross-Tools the version [v4.8.12.22247](https://github.com/eirannejad/pyRevit/releases/tag/v4.8.12.22247%2B0031) was used. The installation is self-explanatory and very well documented, but a look at the [Notion Page](https://pyrevitlabs.notion.site/pyrevitlabs/pyRevit-bd907d6292ed4ce997c46e84b6ef67a0) is worthwhile.
-3. Navigate now to the extensions of pyRevit, under the first tab. 
+3. After the successful installation of pyRevit, Navigate now to the extensions of pyRevit, under the first tab. 
 <div align="center">
 <img src="./img/Pyrevit_Extensions.PNG" >
 </div>
 
-4. You should now see a list of all extensions that are either written by pyRevit itself or recommended by pyRevit. We now want to add "Cross-Tools" to this list, as shown in the screenshot.<br>
+4. You should now see a list of all extensions that are either written by pyRevit itself or recommended by pyRevit, this is the __Pyrevit Extension Manager__. We now want to add "Cross-Tools" to this list!
+> __The Cross-Tools should not be visible to you yet, as shown in the screenshot below!__<br>
+
 <div align="center">
-<img src="./img/Pyrevit_Extension_Manager.PNG" >
+<img src="./img/Pyrevit_Extension_Manager_Step01.PNG" >
 </div>
+
 
 5. To do this, we need to find the location of these listed extensions. They are written inside a json file, with the name "extensions.json"! This should be found here:<br>
 `C:\Users\cxs-user\AppData\Roaming\pyRevit-Master\extensions\`
@@ -90,7 +93,7 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
             "dependencies": []
         }
 ````
-Make sure you place the commas correctly!
+> __Make sure you place the commas in the right place!__
 ````
 {
     "extensions": [
@@ -104,7 +107,33 @@ Make sure you place the commas correctly!
 }
 ````
 
-7. 
+7. Depending on your system it may be enough to reload pyRevit __and__ update it once. However, my recommendation would be a __restart__ of Revit. Any changes will be added automatically. 
+
+8. Navigate to the __Pyrevit Extension Manager__ again. You should now be able to see "Cross-Tools"!
+
+<div align="center">
+<img src="./img/Pyrevit_Extension_Manager_Step02.PNG" >
+</div>
+
+9. "Cross-Tools is a private repository. Therefore the check box "Git repository is private" has to be checked! If you want to get the access token, contact [me](mailto:erich.domme@rwth-aachen.de).
+
+<div align="center">
+<img src="./img/Pyrevit_Extension_Manager_Step03.PNG" >
+</div>
+
+10. In contrast to me, the "Cross-Tools" will not yet be installed in your Revit. You should do this by clicking on Install Extension.
+
+<div align="center">
+<img src="./img/Pyrevit_Extension_Manager_Step04.PNG" >
+</div>
+
+11. Done! You should now have "cross tools" in Revit!
+
+<p align="center">
+  <img src=https://media3.giphy.com/media/rY93u9tQbybks/giphy.gif?cid=ecf05e47eap1wzrxxzfedemp62jtrogwbslh12q694q9hdef&ep=v1_gifs_related&rid=giphy.gif&ct=g.gif alt="animated" />
+</p>
+<p align="center"><font size="3">
+Congratulations!</p>
 
 
 ## Features
@@ -130,7 +159,6 @@ Make sure you place the commas correctly!
 <img src="./img/Toolbar.PNG" >
 <p>The "Cross-Tools" Extension visible in the Revit toolbar</p>
 </div>
-<!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Usage
 How does one go about using it?
