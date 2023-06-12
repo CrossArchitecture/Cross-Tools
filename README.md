@@ -75,7 +75,7 @@ In order for Cross-Tools to run on your computer, you will need to do a few inst
 </div>
 
 4. You should now see a list of all extensions that are either written by pyRevit itself or recommended by pyRevit, this is the __pyRevit Extension Manager__. We now want to add "Cross-Tools" to this list!
-> __The Cross-Tools should not be visible to you yet, as shown in the screenshot below!__<br>
+> __"Cross-Tools" should not be visible to you yet, as shown in the screenshot below!__<br>
 
 <div align="center">
 <img src="./img/Pyrevit_Extension_Manager_Step01.png" >
