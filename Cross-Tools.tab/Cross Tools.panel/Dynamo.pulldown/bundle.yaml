@@ -1,10 +1,10 @@
 layout:
   - Beam
-  - ---
+  - -----
   - Excel
-  - ---
+  - -----
   - DeleteSelectedUnplacedViews
-  - ---
+  - -----
   - WarningManagement
   - ResetGraphicalOverride
 
