@@ -4,6 +4,7 @@ layout:
   - Excel
   - -----
   - DeleteSelectedUnplacedViews
+  - DeleteUnusedViewTemplates
   - -----
   - WarningManagement
   - ResetGraphicalOverride
