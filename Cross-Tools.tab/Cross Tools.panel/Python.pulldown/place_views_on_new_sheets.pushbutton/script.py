@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 
 __title__ = "Place Views on Sheets"   # Name of the button displayed in Revit
-__author__ = "Erik Frits"
+__author__ = "Erich Domme"
 # __context__ = 'Views'
-__doc__ = """Version = 0.2
-Date    = 31.08.2020
-_____________________________________________________________________
-Description:
+__doc__ = """Description:
 >>> THIS TOOL IS STIL WORK IN PROGRESS <<<
 
 Place selected views to new sheets.
@@ -18,22 +15,6 @@ How-to:
 -> Select TitleBlock
 -> Set SheetNumbering rules
 -> Run
-_____________________________________________________________________
-Prerequisite:
-
-You have to select Views in ProjectBrowser.
-_____________________________________________________________________
-Last update:
-- [11.07.2021] - Release V0.2
-- [11.07.2021] - Refactored
-
-_____________________________________________________________________
-To-do:
-- Sort views for correct naming (Elevation/ViewNames)
-- Allign view to the center of title block
-- GUI
-- Set selection to newly created sheets.
-_____________________________________________________________________
 """
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> IMPORTS
