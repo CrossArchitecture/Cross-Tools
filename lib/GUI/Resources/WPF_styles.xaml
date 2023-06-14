@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:Common.WPF_styles">
 
             <!-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>[COLOURS]-->
-            <SolidColorBrush x:Key="header_background"  Color="#0f0f2d" />
+            <SolidColorBrush x:Key="header_background"  Color="#ffffff" />
 
             <SolidColorBrush x:Key="text_white"         Color="#E5E4E2" />
             <SolidColorBrush x:Key="text_gray"          Color="Gray" />
@@ -19,7 +19,7 @@
             <SolidColorBrush x:Key="uncheckbox_checked_colour"     Color="Gray" />
             <SolidColorBrush x:Key="checkbox_checked_colour"     Color="#EE82EE" />
 
-            <SolidColorBrush x:Key="footer_donate"     Color="#FF4C70" />
+            <SolidColorBrush x:Key="footer_donate"     Color="#ffffff" />
 
 
 
