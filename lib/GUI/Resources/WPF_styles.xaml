@@ -217,11 +217,11 @@
 
                                     <TextBlock>
                     <Hyperlink  RequestNavigate="Hyperlink_RequestNavigate"
-                                NavigateUri="https://erikfrits.com/blog/"
+                                NavigateUri="https://github.com/CrossArchitecture/Cross-Tools"
                                 FontSize="14px"
                                 FontWeight="Heavy"
                                 Foreground="{StaticResource text_white}">
-                                EF-Tools
+                                Cross-Tools
                     </Hyperlink>
                                     </TextBlock>
                                 </DockPanel>
