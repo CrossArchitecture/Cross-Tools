@@ -13,13 +13,13 @@
     ShowInTaskbar="True"
     WindowStyle="None"
     AllowsTransparency="True"
-    Background="#080326">
+    Background="#000000">
 
     <!--MAIN-->
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color= "#45FF00" Offset="0" />
+                <GradientStop Color= "#FFFFFF" Offset="0" />
                 <GradientStop Color="#FFFFFF" Offset="1" />
             </LinearGradientBrush>
         </Grid.Background>
@@ -184,7 +184,7 @@
 
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox  Background="#EE82EE" Foreground="{StaticResource text_white}" IsChecked="{Binding IsChecked}"  Checked="UIe_ItemChecked" >
+                        <CheckBox  Background="#FFFFFF" Foreground="{StaticResource text_black}" IsChecked="{Binding IsChecked}"  Checked="UIe_ItemChecked" >
                             <TextBlock Text="{Binding Name}"/>
                         </CheckBox>
                     </DataTemplate>
