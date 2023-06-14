@@ -57,11 +57,11 @@
                 <TextBlock Margin="5,0,0,0">
                     <Hyperlink
                         RequestNavigate="Hyperlink_RequestNavigate"
-                        NavigateUri="https://www.linkedin.com/company/80151029"
+                        NavigateUri="https://github.com/CrossArchitecture/Cross-Tools"
                         FontSize="14px"
                         FontWeight="Heavy"
                         Foreground="{StaticResource text_white}">
-                        EF-Tools
+                        Cross-Tools
                     </Hyperlink>
                 </TextBlock>
             </DockPanel>
@@ -235,9 +235,9 @@
 
             <!--IMAGE-->
             <TextBlock>
-                <Hyperlink  NavigateUri="https://www.learnrevitapi.com" RequestNavigate="Hyperlink_RequestNavigate">
+                <Hyperlink  NavigateUri="https://www.cross-architecture.net/" RequestNavigate="Hyperlink_RequestNavigate">
                                <Image  Height="20"   Margin="1"  HorizontalAlignment="Left"   VerticalAlignment="Top"
-                                   Source="https://www.learnrevitapi.com/static/img_new/logo/logo_learnrevitapi.png" />
+                                   Source="img.cxs.png" />
                 </Hyperlink>
             </TextBlock>
 
@@ -251,20 +251,6 @@
               HorizontalAlignment="Center"
               Foreground="{StaticResource text_gray}"
     />
-
-            <!--Ko-Fi-->
-            <TextBlock  Grid.Column="2"
-              VerticalAlignment="Center"
-              HorizontalAlignment="Right"
-              Margin="0,0,10,0">
-              <Hyperlink
-                  RequestNavigate="Hyperlink_RequestNavigate"
-                  NavigateUri="https://www.ko-fi.com/ErikFrits"
-                  FontWeight="Medium"
-                  Foreground="{StaticResource button_bg_hover}">
-                  Support EF-Tools
-              </Hyperlink>
-            </TextBlock>
         </Grid>
         <!--FOOTER END-->
     </Grid>
