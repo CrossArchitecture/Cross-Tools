@@ -719,7 +719,7 @@
             <TextBlock>
                 <Hyperlink  NavigateUri="https://www.cross-architecture.net/" RequestNavigate="Hyperlink_RequestNavigate">
                                <Image  Height="20"   Margin="1"  HorizontalAlignment="Left"   VerticalAlignment="Top"
-                                   Source=img\cxs_white.png />
+                                   Source="C:\Users\cxs-user\OneDrive\Dokumente\pyRevit\extensions\Cross-Tools\img\cxs_white.png" />
                 </Hyperlink>
             </TextBlock>
 
