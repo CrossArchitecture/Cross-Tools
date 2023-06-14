@@ -1,15 +1,17 @@
 layout:
   - Python
-  - ---
+  - -----
   - SelCat
   - SelType
   - SelTtbs
-  - ---
+  - -----
   - PreMulti
   - Pre3D
   - Pre2D
-  - ---
+  - -----
   - DeGroup
+  - -----
+  - place_views_on_new_sheets
 
 title: Python
 
