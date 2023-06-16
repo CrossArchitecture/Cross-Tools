@@ -719,7 +719,7 @@
             <TextBlock>
                 <Hyperlink  NavigateUri="https://www.cross-architecture.net/" RequestNavigate="Hyperlink_RequestNavigate">
                                <Image  Height="20"   Margin="1"  HorizontalAlignment="Left"   VerticalAlignment="Top"
-                                   Source="https://images.squarespace-cdn.com/content/v1/56e80c843c44d8db592aefe7/1462354916694-9R8CINAOMEZV6UUIT9Y6/Cross-Logo-with_border-transparent-black-01.png?format=1500w" />
+                                   Source="https://raw.githubusercontent.com/CrossArchitecture/Cross-Tools/main/img/cxs_white.png" />
                 </Hyperlink>
             </TextBlock>
 
