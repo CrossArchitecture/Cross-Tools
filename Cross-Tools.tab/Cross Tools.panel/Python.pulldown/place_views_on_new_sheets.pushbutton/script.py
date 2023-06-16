@@ -4,9 +4,9 @@ __title__ = "Place Views on Sheets"   # Name of the button displayed in Revit
 __author__ = "Erich Domme"
 # __context__ = 'Views'
 __doc__ = """Description:
->>> THIS TOOL IS STILL WORK IN PROGRESS <<<
+>>> THIS TOOL IS STIL WORK IN PROGRESS <<<
 
-Place selected views on new sheets.
+Place selected views to new sheets.
 _____________________________________________________________________
 How-to:
 
@@ -35,7 +35,7 @@ uidoc   = __revit__.ActiveUIDocument
 app     = __revit__.Application
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> GUI
-# TODO
+#TODO
 class MyWindow(forms.WPFWindow):
     """GUI for View renaming tool."""
     def __init__(self, xaml_file_name):
@@ -50,18 +50,6 @@ class MyWindow(forms.WPFWindow):
     def start_count(self):
         return int(self.field_start_count.Text)
 
-    @property
-    def origin_x(self):
-        return float(self.field_origin_x.Text)
-
-    @property
-    def origin_y(self):
-        return float(self.field_origin_y.Text)
-
-    @property
-    def origin_z(self):
-        return float(self.field_origin_z.Text)
-
     #>>>>>>>>>> GUI EVENTS
     def buttonclick_run(self, sender, e):
         """Button action: Rename view with given """
@@ -74,14 +62,15 @@ if __name__ == '__main__':
     #>>>>>>>>>> GET SELECTED VIEWS
     selected_views = get_selected_views(uidoc)
     if not selected_views:
-        forms.alert("No views selected. Please try again.", exitscript=True)
+        forms.alert("No views selected. Please try again.", exitscript = True)
 
     #>>>>>>>>>> FILTER VIEWS ALREADY ON SHEETS
     selected_views_already_on_sheet = [view for view in selected_views if view.get_Parameter(BuiltInParameter.VIEWER_SHEET_NUMBER).AsString() != '---']
-    selected_views = [view for view in selected_views if view.get_Parameter(BuiltInParameter.VIEWER_SHEET_NUMBER).AsString() == '---']
+    selected_views                  = [view for view in selected_views if view.get_Parameter(BuiltInParameter.VIEWER_SHEET_NUMBER).AsString() == '---']
+
 
     #>>>>>>>>>> PRINT VIEWS NOT ON SHEETS
-    # fixme add equal spacing
+    #fixme add equal spacing
     if selected_views_already_on_sheet:
         print("="*30 + " Views that are already placed on sheets:")
         for view in selected_views_already_on_sheet:
@@ -94,24 +83,25 @@ if __name__ == '__main__':
     GUI = MyWindow("Script.xaml")
     GUI.ShowDialog()
 
-    prefix = GUI.prefix
+    prefix      = GUI.prefix
     start_count = GUI.start_count
-    origin_x = GUI.origin_x
-    origin_y = GUI.origin_y
-    origin_z = GUI.origin_z
+
 
     #>>>>>>>>>> MAIN LOOP
-    print("="*30 + " Placing {} views on sheets.".format(len(selected_views)))
+
+    print("="*30 +" Placing {} views on sheets.".format(len(selected_views)))
 
     t = Transaction(doc, "Py: New Sheets")
     t.Start()
 
+
     for view in selected_views:
+
         #>>>>>>>>>> CREATE SHEET
         Sheet = ViewSheet.Create(doc, selected_title_block)
 
         #>>>>>>>>>> SET SHEET NUMBER
-        count = "{:02d}".format(start_count)  # 1 -> 01...
+        count = "{:02d}".format(start_count) # 1 -> 01...
         sheet_number = prefix + count
 
         fail_count = 0
@@ -127,8 +117,9 @@ if __name__ == '__main__':
         start_count += 1
 
         #>>>>>>>>>> PLACE VIEW ON SHEET
-        Viewport.Create(doc, Sheet.Id, view.Id, XYZ(origin_x, origin_y, origin_z))
+
+        Viewport.Create(doc, Sheet.Id, view.Id, XYZ(0, 0, 0))
         Sheet.Name = view.Name
         print('Created sheet: {} - {}'.format(sheet_number, Sheet.Name))
-
     t.Commit()
+
