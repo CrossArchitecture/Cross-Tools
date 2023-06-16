@@ -718,7 +718,7 @@
             <!--IMAGE-->
             <TextBlock>
                 <Hyperlink  NavigateUri="https://www.cross-architecture.net/" RequestNavigate="Hyperlink_RequestNavigate">
-                               <Image  Height="20"   Margin="1"  HorizontalAlignment="Left"   VerticalAlignment="Top"
+                               <Image  Height="30"   Margin="1"  HorizontalAlignment="Left"   VerticalAlignment="Top"
                                    Source="https://raw.githubusercontent.com/CrossArchitecture/Cross-Tools/main/img/cxs_white.png" />
                 </Hyperlink>
             </TextBlock>
