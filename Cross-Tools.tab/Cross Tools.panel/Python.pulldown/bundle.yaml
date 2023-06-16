@@ -12,6 +12,7 @@ layout:
   - DeGroup
   - -----
   - place_views_on_new_sheets
+  - align_viewports
 
 title: Python
 
