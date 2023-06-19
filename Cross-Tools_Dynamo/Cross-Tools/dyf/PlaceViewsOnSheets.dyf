@@ -206,32 +206,6 @@
       ],
       "Replication": "Disabled",
       "Description": "Runs an embedded IronPython script."
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
-      "NodeType": "InputNode",
-      "Parameter": {
-        "Name": "",
-        "TypeName": "var",
-        "TypeRank": -1,
-        "DefaultValue": null,
-        "Description": ""
-      },
-      "Id": "5ada1fa0af1d4fa59c3ecde62b58970a",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "e5ae71fec6774fc6aeaf999e44852c4a",
-          "Name": "",
-          "Description": "Symbol",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
     }
   ],
   "Connectors": [
@@ -340,21 +314,11 @@
         "Excluded": false,
         "X": 263.0,
         "Y": 108.0
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Input",
-        "Id": "5ada1fa0af1d4fa59c3ecde62b58970a",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 175.1097997823619,
-        "Y": 373.47296104466244
       }
     ],
     "Annotations": [],
-    "X": 161.66259375000004,
-    "Y": 266.20681250000007,
+    "X": 206.66259375000004,
+    "Y": 331.20681250000007,
     "Zoom": 1.33823125
   }
 }
