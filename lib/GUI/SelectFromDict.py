@@ -47,7 +47,7 @@ class ListItem:
 #====================================================================================================
 class SelectFromDict(my_WPF):
     def __init__(self, items,
-                 title = '__title',
+                 title = '__title__',
                  label = "Select Elements:" ,
                  button_name = 'Select',
                  version = 'version= 1.0',
