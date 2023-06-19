@@ -1,9 +1,9 @@
 {
-  "Uuid": "98d38af8-1268-475a-8bd9-00ecbfa264b4",
+  "Uuid": "bcf115cc-0f55-458b-9b9a-114ad74f41d8",
   "IsCustomNode": true,
-  "Category": "SteamNodes.Tool",
-  "Description": "Places existing views on existing sheets",
-  "Name": "Tool.PlaceViewsOnSheets",
+  "Category": "Cross-Tools",
+  "Description": "",
+  "Name": "PlaceViewsOnSheets",
   "ElementResolver": {
     "ResolutionMap": {}
   },
@@ -13,12 +13,12 @@
     {
       "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
       "NodeType": "PythonScriptNode",
-      "Code": "#python nodes in dynamo 1.2\n#proposed by Julien Benoit @jbenoit44 \n#http://aecuandme.wordpress.com/\nimport clr\nclr.AddReference('ProtoGeometry')\nfrom Autodesk.DesignScript.Geometry import *\n# Import ToDSType(bool) extension method\nclr.AddReference(\"RevitNodes\")\nimport Revit\nclr.ImportExtensions(Revit.Elements)\n# Import geometry conversion extension methods\nclr.ImportExtensions(Revit.GeometryConversion)\n# Import DocumentManager and TransactionManager\nclr.AddReference(\"RevitServices\")\nimport RevitServices\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\nfrom System.Collections.Generic import *\n# Import RevitAPI\nclr.AddReference(\"RevitAPI\")\nimport Autodesk\nfrom Autodesk.Revit.DB import *\n\ndoc = DocumentManager.Instance.CurrentDBDocument\nuiapp = DocumentManager.Instance.CurrentUIApplication\napp = uiapp.Application\nuidoc=DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\n\nsheets = []\nfor i in IN[0]:\n\tsheets.append(UnwrapElement(i))\nviews=[]\t\nfor i in IN[1]:\n\tviews.append(UnwrapElement(i))\npoints=[]\t\nfor i in IN[2]:\n\tpoints.append(UnwrapElement(i).ToXyz())\n\n# Start Transaction\nTransactionManager.Instance.EnsureInTransaction(doc)\nviewp=[]\n#for sheet,view,point in zip(sheets,views,points):\nfor s,v,p in zip(sheets,views,points):\n\ta=Viewport.Create(doc, s.Id,v.Id, p)\n\tviewp.append(a)\n\n# End Transaction\nTransactionManager.Instance.TransactionTaskDone()\n\nOUT=viewp",
+      "Code": "#python nodes in dynamo 1.2\n#proposed by Julien Benoit @jbenoit44 \n#http://aecuandme.wordpress.com/\nimport clr\nclr.AddReference('ProtoGeometry')\nfrom Autodesk.DesignScript.Geometry import *\n# Import ToDSType(bool) extension method\nclr.AddReference(\"RevitNodes\")\nimport Revit\nclr.ImportExtensions(Revit.Elements)\n# Import geometry conversion extension methods\nclr.ImportExtensions(Revit.GeometryConversion)\n# Import DocumentManager and TransactionManager\nclr.AddReference(\"RevitServices\")\nimport RevitServices\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\nfrom System.Collections.Generic import *\n# Import RevitAPI\nclr.AddReference(\"RevitAPI\")\nimport Autodesk\nfrom Autodesk.Revit.DB import *\n\ndoc = DocumentManager.Instance.CurrentDBDocument\nuiapp = DocumentManager.Instance.CurrentUIApplication\napp = uiapp.Application\nuidoc=DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\n\nsheets = []\nfor i in IN[0]:\n\tsheets.append(UnwrapElement(i))\nviews=[]\t\nfor i in IN[1]:\n\tviews.append(UnwrapElement(i))\npoints=[]\t\nfor i in IN[2]:\n\tpoints.append(UnwrapElement(i).ToXyz())\n\n# Start Transaction\nTransactionManager.Instance.EnsureInTransaction(doc)\nviewp=[]\nfor s in sheets:\n\tfor v,p in zip(views,points):\n\t\ta=Viewport.Create(doc, s.Id,v.Id, p)\n\t\tviewp.append(a)\n\n# End Transaction\nTransactionManager.Instance.TransactionTaskDone()\n\nOUT=viewp",
       "VariableInputPorts": true,
-      "Id": "3f701449d3a449fc9b6d2992fb5ab00c",
+      "Id": "a8dc65dec10f4f7e83abde73ba4ec9b4",
       "Inputs": [
         {
-          "Id": "8e6eadc4510e4622bd34422cb07c6f9f",
+          "Id": "82ccd45386904c279cb527aed7a8a63d",
           "Name": "IN[0]",
           "Description": "Input #0",
           "UsingDefaultValue": false,
@@ -27,7 +27,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "7f7ac9593851475e8538e4f8c69189fc",
+          "Id": "6ac74be4da5f471fa4d8368579a600e0",
           "Name": "IN[1]",
           "Description": "Input #1",
           "UsingDefaultValue": false,
@@ -36,7 +36,7 @@
           "KeepListStructure": false
         },
         {
-          "Id": "a219c8b718354bbd9335a4341bc26522",
+          "Id": "cf3c13ea24334b34af7b23dd5ed6e379",
           "Name": "IN[2]",
           "Description": "Input #2",
           "UsingDefaultValue": false,
@@ -47,7 +47,77 @@
       ],
       "Outputs": [
         {
-          "Id": "f5fc864095804a56a03d7e9c17f10628",
+          "Id": "aac907c8314e4f82b4ebe784d73ae38b",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Viewports",
+      "Id": "e0d8c38025604ef2bd494cff5c454f11",
+      "Inputs": [
+        {
+          "Id": "920b18f892354bfe9c29882b8943ac15",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#python nodes in dynamo 1.2\n#proposed by Julien Benoit @jbenoit44 \n#http://aecuandme.wordpress.com/\nimport clr\nclr.AddReference('ProtoGeometry')\nfrom Autodesk.DesignScript.Geometry import *\n# Import ToDSType(bool) extension method\nclr.AddReference(\"RevitNodes\")\nimport Revit\nclr.ImportExtensions(Revit.Elements)\n# Import geometry conversion extension methods\nclr.ImportExtensions(Revit.GeometryConversion)\n# Import DocumentManager and TransactionManager\nclr.AddReference(\"RevitServices\")\nimport RevitServices\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\nfrom System.Collections.Generic import *\n# Import RevitAPI\nclr.AddReference(\"RevitAPI\")\nimport Autodesk\nfrom Autodesk.Revit.DB import *\n\ndoc = DocumentManager.Instance.CurrentDBDocument\nuiapp = DocumentManager.Instance.CurrentUIApplication\napp = uiapp.Application\nuidoc=DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\n\nsheets = []\nfor i in IN[0]:\n\tsheets.append(UnwrapElement(i))\nviews=[]\t\nfor i in IN[1]:\n\tviews.append(UnwrapElement(i))\npoints=[]\t\nfor i in IN[2]:\n\tpoints.append(UnwrapElement(i).ToXyz())\n\n# Start Transaction\nTransactionManager.Instance.EnsureInTransaction(doc)\nviewp=[]\n#for sheet,view,point in zip(sheets,views,points):\nfor s,v,p in zip(sheets,views,points):\n\ta=Viewport.Create(doc, s.Id,v.Id, p)\n\tviewp.append(a)\n\n# End Transaction\nTransactionManager.Instance.TransactionTaskDone()\n\nOUT=viewp",
+      "VariableInputPorts": true,
+      "Id": "d9338cb375d24059842ab12de410d142",
+      "Inputs": [
+        {
+          "Id": "6b866116c47e4e2390c8e231a78bf109",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3aefd6f7f8904889844ebdb3158bb5cc",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f04d78137e514b39be3b8fec8f120619",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8d635c1156c34a6cbcf421849321dbe9",
           "Name": "OUT",
           "Description": "Result of the python script",
           "UsingDefaultValue": false,
@@ -63,17 +133,43 @@
       "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
       "NodeType": "InputNode",
       "Parameter": {
+        "Name": "PointsList",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "b165d6bf335e4483b23e2bb4bb3f0091",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "67e83ae34d87403883415d761f1d7f2a",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
         "Name": "SheetList",
         "TypeName": "var",
         "TypeRank": 1,
         "DefaultValue": null,
         "Description": ""
       },
-      "Id": "5c0a4d5b746b46ef8a62679497ea4323",
+      "Id": "6b4c0d526aa5400c90697cd776909cff",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "e384b676e0b04e61941734a2f2cfd8d8",
+          "Id": "9a4aa969912c464b9f89ce3b079810bf",
           "Name": "",
           "Description": "Symbol",
           "UsingDefaultValue": false,
@@ -95,11 +191,11 @@
         "DefaultValue": null,
         "Description": ""
       },
-      "Id": "e157e66b0fea4a07be9017ac39f876ac",
+      "Id": "246d3c7c8ce74118b17365d4ca4efad2",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "16b543c96b5341a0b408a0dfefa74a3a",
+          "Id": "232c489e679a46fd8106b1b3864bd22f",
           "Name": "",
           "Description": "Symbol",
           "UsingDefaultValue": false,
@@ -110,124 +206,28 @@
       ],
       "Replication": "Disabled",
       "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
-      "NodeType": "InputNode",
-      "Parameter": {
-        "Name": "PointsList",
-        "TypeName": "var",
-        "TypeRank": 1,
-        "DefaultValue": null,
-        "Description": ""
-      },
-      "Id": "cbc79a1594ff45a0a18c84048885acd6",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "bfb0b90b5a954bb29644b0fa66aeac80",
-          "Name": "",
-          "Description": "Symbol",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
-      "NodeType": "OutputNode",
-      "ElementResolver": null,
-      "Symbol": "Viewports",
-      "Id": "1ae53f03e5054146bdda1b2cd4cb02e2",
-      "Inputs": [
-        {
-          "Id": "5e715c9d88dd461f833d56a538add291",
-          "Name": "",
-          "Description": "",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "A function output, use with custom nodes"
-    },
-    {
-      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
-      "NodeType": "PythonScriptNode",
-      "Code": "#python nodes in dynamo 1.2\n#proposed by Julien Benoit @jbenoit44 \n#http://aecuandme.wordpress.com/\nimport clr\nclr.AddReference('ProtoGeometry')\nfrom Autodesk.DesignScript.Geometry import *\n# Import ToDSType(bool) extension method\nclr.AddReference(\"RevitNodes\")\nimport Revit\nclr.ImportExtensions(Revit.Elements)\n# Import geometry conversion extension methods\nclr.ImportExtensions(Revit.GeometryConversion)\n# Import DocumentManager and TransactionManager\nclr.AddReference(\"RevitServices\")\nimport RevitServices\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\nfrom System.Collections.Generic import *\n# Import RevitAPI\nclr.AddReference(\"RevitAPI\")\nimport Autodesk\nfrom Autodesk.Revit.DB import *\n\ndoc = DocumentManager.Instance.CurrentDBDocument\nuiapp = DocumentManager.Instance.CurrentUIApplication\napp = uiapp.Application\nuidoc=DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\n\nsheets = []\nfor i in IN[0]:\n\tsheets.append(UnwrapElement(i))\nviews=[]\t\nfor i in IN[1]:\n\tviews.append(UnwrapElement(i))\npoints=[]\t\nfor i in IN[2]:\n\tpoints.append(UnwrapElement(i).ToXyz())\n\n# Start Transaction\nTransactionManager.Instance.EnsureInTransaction(doc)\nviewp=[]\nfor s in sheets:\n\tfor v,p in zip(views,points):\n\t\ta=Viewport.Create(doc, s.Id,v.Id, p)\n\t\tviewp.append(a)\n\n# End Transaction\nTransactionManager.Instance.TransactionTaskDone()\n\nOUT=viewp",
-      "VariableInputPorts": true,
-      "Id": "d466d86a63c74424a4e61afd11f543ce",
-      "Inputs": [
-        {
-          "Id": "0e363342cf9a4cc68b7906972bb7f786",
-          "Name": "IN[0]",
-          "Description": "Input #0",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "d6689d466e904000ad87588b2b8d0f90",
-          "Name": "IN[1]",
-          "Description": "Input #1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "7e614f75570d412e96771f64920093de",
-          "Name": "IN[2]",
-          "Description": "Input #2",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "8c06135ae5dd4ff5951b772d7eb47a87",
-          "Name": "OUT",
-          "Description": "Result of the python script",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Runs an embedded IronPython script."
     }
   ],
   "Connectors": [
     {
-      "Start": "e384b676e0b04e61941734a2f2cfd8d8",
-      "End": "0e363342cf9a4cc68b7906972bb7f786",
-      "Id": "955864b41aab4a4482ec483c08e7f71b"
+      "Start": "aac907c8314e4f82b4ebe784d73ae38b",
+      "End": "920b18f892354bfe9c29882b8943ac15",
+      "Id": "382333872b99414da9d4cda69825d7ad"
     },
     {
-      "Start": "16b543c96b5341a0b408a0dfefa74a3a",
-      "End": "d6689d466e904000ad87588b2b8d0f90",
-      "Id": "fa4337d2e63c41ec812d4c35efe8c745"
+      "Start": "67e83ae34d87403883415d761f1d7f2a",
+      "End": "cf3c13ea24334b34af7b23dd5ed6e379",
+      "Id": "20b35049b2d1467c8edb2808cb7681ea"
     },
     {
-      "Start": "bfb0b90b5a954bb29644b0fa66aeac80",
-      "End": "7e614f75570d412e96771f64920093de",
-      "Id": "352bbf5be53a4dc0b7340d7daa53e0bc"
+      "Start": "9a4aa969912c464b9f89ce3b079810bf",
+      "End": "82ccd45386904c279cb527aed7a8a63d",
+      "Id": "0468784809df4bc3bcbd99a4170b3573"
     },
     {
-      "Start": "8c06135ae5dd4ff5951b772d7eb47a87",
-      "End": "5e715c9d88dd461f833d56a538add291",
-      "Id": "bd2e34edf2634db689dda8defa6ba7ef"
+      "Start": "232c489e679a46fd8106b1b3864bd22f",
+      "End": "6ac74be4da5f471fa4d8368579a600e0",
+      "Id": "82a1e02e622048339e691ee77cdeb1e2"
     }
   ],
   "Dependencies": [],
@@ -257,68 +257,68 @@
     "NodeViews": [
       {
         "ShowGeometry": true,
-        "Name": "Python Script",
-        "Id": "3f701449d3a449fc9b6d2992fb5ab00c",
+        "Name": "v2",
+        "Id": "a8dc65dec10f4f7e83abde73ba4ec9b4",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 259.0,
-        "Y": -103.0
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Input",
-        "Id": "5c0a4d5b746b46ef8a62679497ea4323",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 0.0,
-        "Y": 0.0
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Input",
-        "Id": "e157e66b0fea4a07be9017ac39f876ac",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 0.0,
-        "Y": 150.0
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Input",
-        "Id": "cbc79a1594ff45a0a18c84048885acd6",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 0.0,
-        "Y": 300.0
+        "X": 871.0,
+        "Y": 788.0
       },
       {
         "ShowGeometry": true,
         "Name": "Output",
-        "Id": "1ae53f03e5054146bdda1b2cd4cb02e2",
+        "Id": "e0d8c38025604ef2bd494cff5c454f11",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 447.0,
-        "Y": 0.0
+        "X": 1055.0,
+        "Y": 680.0
       },
       {
         "ShowGeometry": true,
-        "Name": "v2",
-        "Id": "d466d86a63c74424a4e61afd11f543ce",
+        "Name": "Python Script",
+        "Id": "d9338cb375d24059842ab12de410d142",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 263.0,
-        "Y": 108.0
+        "X": 867.0,
+        "Y": 577.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "b165d6bf335e4483b23e2bb4bb3f0091",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 608.0,
+        "Y": 980.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "6b4c0d526aa5400c90697cd776909cff",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 608.0,
+        "Y": 680.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "246d3c7c8ce74118b17365d4ca4efad2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 608.0,
+        "Y": 830.0
       }
     ],
     "Annotations": [],
-    "X": 206.66259375000004,
-    "Y": 331.20681250000007,
-    "Zoom": 1.33823125
+    "X": -110.0,
+    "Y": -230.0,
+    "Zoom": 1.0
   }
 }
