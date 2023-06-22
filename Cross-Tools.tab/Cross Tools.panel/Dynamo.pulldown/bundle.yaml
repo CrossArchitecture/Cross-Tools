@@ -9,6 +9,8 @@ layout:
   - -----
   - WarningManagement
   - ResetGraphicalOverride
+  - -----
+  - PlaceViewsOnSheet
 
 title: Dynamo
 
