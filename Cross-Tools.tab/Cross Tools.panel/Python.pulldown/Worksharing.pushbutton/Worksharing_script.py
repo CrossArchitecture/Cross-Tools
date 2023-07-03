@@ -1,20 +1,33 @@
-import clr
-clr.AddReference("RevitAPI")
-from Autodesk.Revit.DB import Document, CentralModelPath, WorksharingUtils
+import pyrevit
+from pyrevit import revit, DB, forms
 
-# Pfad zur Revit-Datei
-model_path = r"C:\Users\cxs-user\ShareFolder\HDW_ARC_AL.rvt"
+# Methode, um den Synchronisationsstatus des Modells abzurufen
+def get_sync_status():
+    current_user = revit.doc.GetWorksharingCentralModelPath().GetUserVisibleName()
+    if current_user:
+        return True  # Das Modell wird bereits synchronisiert
+    else:
+        return False  # Das Modell ist nicht synchronisiert
 
-# Öffnen des Revit-Dokuments
-doc = __revit__.OpenDocumentFile(model_path)
+# Methode, um das Modell zu synchronisieren
+def synchronize_model():
+    try:
+        revit.doc.SynchronizeWithCentral(DB.TransactWithCentralOptions())
+        return True  # Erfolgreich synchronisiert
+    except Exception as e:
+        return str(e)  # Fehler beim Synchronisieren
 
-# Überprüfen des Synchronisierungsstatus
-needs_sync = WorksharingUtils.IsModelNeedsSynchronization(doc)
+# Hauptfunktion, um den Button zu erstellen und den Status zu überprüfen
+def main():
+    sync_status = get_sync_status()
+    if sync_status:
+        forms.alert("Das Modell wird bereits synchronisiert. Bitte warten Sie.")
+    else:
+        result = synchronize_model()
+        if result == True:
+            forms.alert("Das Modell wurde erfolgreich synchronisiert.")
+        else:
+            forms.alert("Fehler beim Synchronisieren: {}".format(result))
 
-if needs_sync:
-    print("Das Modell erfordert eine Synchronisierung.")
-else:
-    print("Das Modell ist auf dem neuesten Stand.")
-
-# Schließen des Dokuments
-doc.Close(False)
+# Button erstellen
+pyrevit.pushbutton.command(main)
