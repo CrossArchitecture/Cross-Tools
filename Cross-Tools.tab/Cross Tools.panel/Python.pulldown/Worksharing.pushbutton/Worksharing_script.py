@@ -1,33 +1,32 @@
-import pyrevit
-from pyrevit import forms,revit,DB,script
+from pyrevit import revit, DB
 
-# Methode, um den Synchronisationsstatus des Modells abzurufen
-def get_sync_status():
-    current_user = revit.doc.GetWorksharingCentralModelPath().GetUserVisibleName()
+def check_sync_status():
+    doc = revit.doc
+    sync_info = doc.GetWorksharingCentralModelInfo()
+
+    if sync_info.IsWorkshared and sync_info.IsModifiable:
+        # Das Modell wird synchronisiert
+        return True
+    else:
+        # Das Modell wird nicht synchronisiert
+        return False
+
+def sync_model():
+    # Führen Sie hier Ihren Synchronisationscode aus
+    doc = revit.doc
+    current_user = doc.GetWorksharingCentralUser()
+
     if current_user:
-        return True  # Das Modell wird bereits synchronisiert
+        # Es gibt bereits einen Benutzer, der synchronisiert
+        print("Ein anderer Benutzer synchronisiert das Modell.")
     else:
-        return False  # Das Modell ist nicht synchronisiert
+        # Kein anderer Benutzer synchronisiert
+        # Führen Sie den Synchronisationscode aus
+        revit.uidoc.SynchronizeWithCentral(DB.TransactWithCentralOptions())
 
-# Methode, um das Modell zu synchronisieren
-def synchronize_model():
-    try:
-        revit.doc.SynchronizeWithCentral(DB.TransactWithCentralOptions())
-        return True  # Erfolgreich synchronisiert
-    except Exception as e:
-        return str(e)  # Fehler beim Synchronisieren
-
-# Hauptfunktion, um den Button zu erstellen und den Status zu überprüfen
-def main():
-    sync_status = get_sync_status()
-    if sync_status:
-        forms.alert("Das Modell wird bereits synchronisiert. Bitte warten Sie.")
-    else:
-        result = synchronize_model()
-        if result == True:
-            forms.alert("Das Modell wurde erfolgreich synchronisiert.")
-        else:
-            forms.alert("Fehler beim Synchronisieren: {}".format(result))
-
-# Button erstellen
-pyrevit.pushbutton.command(main)
+# Überprüfen, ob das Modell synchronisiert wird
+if not check_sync_status():
+    # Das Modell wird nicht synchronisiert, synchronisieren
+    sync_model()
+else:
+    print("Ein anderer Benutzer synchronisiert das Modell.")
