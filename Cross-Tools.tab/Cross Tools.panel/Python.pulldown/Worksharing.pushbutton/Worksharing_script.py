@@ -1,25 +1,30 @@
-from pyrevit import revit, DB
+from pyrevit import revit, DB, UI
 
 def check_sync_status():
     doc = revit.doc
-    sync_info = doc.GetWorksharingCentralModelInfo()
-    current_user = doc.GetWorksharingCentralUser()
+    options = DB.SynchronizeWithCentralOptions()
+    options.SetRelinquishOptions(DB.RelinquishOptions(False))
 
-    if current_user:
-        # Es gibt bereits einen Benutzer, der synchronisiert
-        return True
-    else:
-        if sync_info.IsWorkshared and sync_info.IsModifiable:
-            # Das Modell wird synchronisiert
-            return False
+    try:
+        doc.SynchronizeWithCentral(options)
+        return False
+    except DB.SynchronizationWithCentralException as ex:
+        if ex.FailureReason == DB.SynchronizationFailureReason.CentralIsNotAvailable:
+            return True
         else:
-            # Das Modell wird nicht synchronisiert
-            return False
+            raise
 
 def sync_model():
-    # Führen Sie hier Ihren Synchronisationscode aus
-    doc = revit.doc
-    revit.uidoc.SynchronizeWithCentral(DB.TransactWithCentralOptions())
+    uidoc = revit.uidoc
+    uiapp = revit.uiapp
+    options = DB.SynchronizeWithCentralOptions()
+    options.SetRelinquishOptions(DB.RelinquishOptions(True))
+
+    try:
+        uidoc.SynchronizeWithCentral(options, uiapp)
+        print("Modell erfolgreich synchronisiert.")
+    except DB.SynchronizationWithCentralException as ex:
+        print("Fehler beim Synchronisieren des Modells:", ex.Message)
 
 # Überprüfen, ob das Modell synchronisiert wird
 if not check_sync_status():
