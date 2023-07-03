@@ -1,5 +1,5 @@
 import pyrevit
-from pyrevit import revit, DB, forms
+from pyrevit import forms,revit,DB,script
 
 # Methode, um den Synchronisationsstatus des Modells abzurufen
 def get_sync_status():
