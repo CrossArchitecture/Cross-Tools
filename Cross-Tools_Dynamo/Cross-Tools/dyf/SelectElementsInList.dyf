@@ -1,0 +1,165 @@
+{
+  "Uuid": "3010fe0b-352e-4f47-b86b-97482c67c8fc",
+  "IsCustomNode": true,
+  "Category": "Cross-Tools",
+  "Description": "",
+  "Name": "SelectElementsInList",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#El Mokkadem Hassan - helmokkadem@gmail.com - Stay CONNECTED\r\n\r\n\r\nimport clr\r\n# import windows form \r\n\r\nclr.AddReference(\"System.Windows.Forms\")\r\n#import system drawing \r\nclr.AddReference(\"System.Drawing\")\r\n# import system\r\nimport System\r\nfrom System.Windows.Forms import *\r\nfrom System.Drawing import *\r\n\r\nlist = IN[0]\r\n\r\nclass CreateWindow2(Form):\r\n\tdef __init__(self):\r\n\t\t\r\n\t\tself.Name = \"Form1\"\r\n\t\tself.Text = \"\"\r\n\t\tself.Size = Size(100,100)\r\n\t\tself.CenterToScreen()\r\n\t\tself.ScrollBar = True\r\n\t\t\r\n\t\tz = Label()\r\n\t\tz.Text = \"DONE\"\r\n\t\tz.Location = Point(40,20)\r\n\t\tz.Parent = self\r\n\r\nclass CreateWindow(Form):\r\n\tdef __init__(self):\r\n\t\t\r\n\t\tt = len(list)\r\n\t\th = t * 60+100\r\n\t\tself.Name = \"Form1\"\r\n\t\tself.Text = \"Tabel\"\r\n\t\tself.Size = Size(500,500)\r\n\t\tself.CenterToScreen()\r\n\t\tself.AutoScroll = True\r\n\t\t\r\n\t\t\r\n\t\r\n\t\tself.values = []\r\n\t\tv = 10\r\n\t\tfor x in list: \r\n\t\t\tz = str(x) +'l'\r\n\t\t\tz = CheckBox()\r\n\t\t\tz.Parent = self\r\n\t\t\tz.Location = Point(50,v)\r\n\t\t\tz.Text = str(x)\r\n\t\t\tz.Enabled = 1\r\n\t\t\tz.Width = 300\r\n\t\t\tz.Height = 50\r\n\t\t\tv += 60\r\n\t\t\tself.values.append(z)\r\n\t\t\t\r\n\t\tbutton = Button()\r\n\t\tbutton.Parent = self\r\n\t\tbutton.Text = \"OK\"\r\n\t\tbutton.Location = Point(400,100)\t\t\r\n\t\t\r\n\t\tbutton.Click += self.ButtonClicked\r\n\t\r\n\tdef ButtonClicked(self, sender, args):\r\n\t\tif sender.Click:\r\n\t\t\tself.Close()\r\n\t\t\tform2 = CreateWindow2()\r\n\t\t\tform2.ShowDialog()\r\n\t\t\t\r\n\r\n\t\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\nform = CreateWindow()\r\nform2 = CreateWindow2()\r\nlost = []\r\n\t\r\n\r\nApplication.Run(form)\r\nfor x in form.values:\r\n\tp = x.CheckState\r\n\tlost.append(p)\r\n\t\r\nnwlst = []\r\n\r\nfor x,y in map(None,lost, list):\r\n\tif str(x) == \"Checked\":\r\n\t\tnwlst.append(y)\r\n\t\r\n\t\r\nApplication.Run(form2)\r\n\r\nOUT = nwlst\r\n\t\t\t",
+      "VariableInputPorts": true,
+      "Id": "338c1cdf244f4046b7c7027705598156",
+      "Inputs": [
+        {
+          "Id": "c2cd69ea4ce4496499a9b088bdf06277",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5595b21ded5e4c8085c6507245bac409",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "Data",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "943dee456b2440699013da71901b5c5c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3d877bd593074d479a16451ce9485e88",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "OUT",
+      "Id": "e56ecbf0efd74a88a99c777cd0c8f488",
+      "Inputs": [
+        {
+          "Id": "7e5b4a3a204c4b4da514c63756eb0383",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "5595b21ded5e4c8085c6507245bac409",
+      "End": "7e5b4a3a204c4b4da514c63756eb0383",
+      "Id": "d0aaafcd5e2b4f71af4cb0fcc0d381dc"
+    },
+    {
+      "Start": "3d877bd593074d479a16451ce9485e88",
+      "End": "c2cd69ea4ce4496499a9b088bdf06277",
+      "Id": "5ccef292259c4d8ca8fa21720db832fc"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.6.1.8786",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Default Camera",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "SelectElementsInList",
+        "Id": "338c1cdf244f4046b7c7027705598156",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 404.0,
+        "Y": 491.765052964221
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "943dee456b2440699013da71901b5c5c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 209.0,
+        "Y": 491.765052964221
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "e56ecbf0efd74a88a99c777cd0c8f488",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 611.0,
+        "Y": 491.765052964221
+      }
+    ],
+    "Annotations": [],
+    "X": -123.01209769335765,
+    "Y": -281.89443064110458,
+    "Zoom": 1.545620359375
+  }
+}
