@@ -1,6 +1,8 @@
 layout:
   - Dynamo
   - -----
+  - Excel
+  - -----
   - Python
   - -----
   - Purge
