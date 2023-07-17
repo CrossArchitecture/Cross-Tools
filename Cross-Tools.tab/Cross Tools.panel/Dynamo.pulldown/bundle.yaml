@@ -1,9 +1,6 @@
 layout:
   - Beam
   - -----
-  - WarningManagement
-  - ResetGraphicalOverride
-  - -----
   - PlaceViewsOnSheet
 
 title: Dynamo
