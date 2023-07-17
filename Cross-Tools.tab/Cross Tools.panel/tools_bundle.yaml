@@ -4,12 +4,12 @@ layout:
   - Generate
   - -----
   - Purge
-  - -----
-  - Python
-  - -----
+    - -----
   - Sheets
   - -----
   - Selection
+  - -----
+  - Tag
   - -----
   - Testing
   - -----
