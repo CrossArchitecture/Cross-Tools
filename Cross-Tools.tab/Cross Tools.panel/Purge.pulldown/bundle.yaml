@@ -11,6 +11,11 @@ layout:
   - Purge unplaced rooms
   - Purge unplaced areas
   - Purge unenclosed areas
+  - -----
+  - DeleteSelectedUnplacedViews
+  - DeleteUnusedViewTemplates
+  - DeleteUnusedFilters
+  - -----
   - Ungroup All
 
 title: Purge
