@@ -1,7 +1,17 @@
 layout:
+  - Beam
+  - -----
+  - Excel
+  - -----
+  - DeleteSelectedUnplacedViews
+  - DeleteUnusedViewTemplates
+  - DeleteUnusedFilters
+  - -----
   - WarningManagement
   - ResetGraphicalOverride
+  - -----
+  - PlaceViewsOnSheet
 
-title: Warning
+title: Dynamo
 
 author: Erich Domme

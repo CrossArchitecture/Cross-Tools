@@ -1,4 +1,5 @@
 layout:
+  - Dynamo
   - Purge
   - Warning
   - Generate
