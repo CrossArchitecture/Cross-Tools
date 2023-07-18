@@ -1,6 +1,9 @@
 layout:
-  - Excel 
+  - Excel  
+  - Generate  
   - Purge  
+  - Sheets  
   - Selection  
+  - Tag  
   - Testing  
   - Warning
