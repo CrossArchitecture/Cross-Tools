@@ -1,16 +1,9 @@
 layout:
-  - Excel
-  - -----
-  - Generate
-  - -----
-  - Purge
-  - -----
-  - Sheets
-  - -----
-  - Selection
-  - -----
-  - Tag
-  - -----
-  - Testing
-  - -----
+  - Excel  
+  - Generate  
+  - Purge  
+  - Sheets  
+  - Selection  
+  - Tag  
+  - Testing  
   - Warning
