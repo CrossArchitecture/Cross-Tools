@@ -1,4 +1,6 @@
 layout:
+  - Python
+  - -----
   - SelCat
   - SelType
   - SelTtbs
@@ -8,7 +10,9 @@ layout:
   - Pre2D
   - -----
   - DeGroup
+  - -----
+  - Worksharing
 
-title: Selection
+title: Python
 
 author: Erich Domme
