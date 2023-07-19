@@ -13,6 +13,7 @@ layout:
   - Purge unenclosed areas
   - Delete Family
   - Delete FamilyType
+  - Delete Parameter
   - Delete Selected Unplaced Views
   - Delete Unused View Templates
   - Delete Unused Filters
