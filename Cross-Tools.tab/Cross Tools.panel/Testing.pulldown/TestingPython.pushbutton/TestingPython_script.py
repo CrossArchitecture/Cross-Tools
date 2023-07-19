@@ -1,27 +1,15 @@
 # coding: utf8
+from pyrevitmep.parameter.managefamily import ManageFamilyParameter
+from pyrevitmep.parameter.manageproject import ManageProjectParameter
 
-import System
+__doc__ = "Manage document parameters"
+__title__ = "DocumentParameters"
+__author__ = "Cyril Waechter"
+# __context__ = "selection"
 
-from pyrevit import forms
+doc = __revit__.ActiveUIDocument.Document  # type: Document
 
-import rpw
-
-doc = rpw.revit.doc
-uidoc = rpw.revit.uidoc
-
-class FamilyPreview(forms.WPFWindow):
-    def __init__(self):
-        forms.WPFWindow.__init__(self, 'FamilyPreview.xaml')
-        for el_id in uidoc.Selection.GetElementIds():
-            el = doc.GetElement(el_id)
-        ftype = doc.GetElement(el.GetTypeId())
-        image = ftype.GetPreviewImage(System.Drawing.Size(96, 96))
-        self.preview_img.Source = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-            image.GetHbitmap(),
-            System.IntPtr.Zero,
-            System.Windows.Int32Rect.Empty,
-            System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions()
-        )
-
-
-FamilyPreview().show_dialog()
+if doc.IsFamilyDocument:
+    ManageFamilyParameter.show_dialog()
+else:
+    ManageProjectParameter.show_dialog()
