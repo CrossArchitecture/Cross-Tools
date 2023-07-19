@@ -11,11 +11,11 @@ layout:
   - Purge unplaced rooms
   - Purge unplaced areas
   - Purge unenclosed areas
-  - DeleteFamily
-  - DeleteFamilyType
-  - DeleteSelectedUnplacedViews
-  - DeleteUnusedViewTemplates
-  - DeleteUnusedFilters
+  - Delete Family
+  - Delete FamilyType
+  - Delete Selected Unplaced Views
+  - Delete Unused View Templates
+  - Delete Unused Filters
   - -----
   - Ungroup All
 
