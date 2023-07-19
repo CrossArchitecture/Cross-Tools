@@ -12,6 +12,7 @@ layout:
   - Purge unplaced areas
   - Purge unenclosed areas
   - DeleteFamily
+  - DeleteFamilyType
   - DeleteSelectedUnplacedViews
   - DeleteUnusedViewTemplates
   - DeleteUnusedFilters
