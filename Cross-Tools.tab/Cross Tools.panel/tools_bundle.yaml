@@ -1,6 +1,7 @@
 layout:
   - Dimension
   - Generate
+  - Parameter
   - Selection
   - Sheets
   - Tag
