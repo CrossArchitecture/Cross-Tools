@@ -1,26 +1,6 @@
 # -*- coding: utf-8 -*-
 
 __title__ = "Wall Match: Both"
-__author__ = "Erik Frits"
-__doc__ = """Version = 1.0
-Date    = 21.10.2019
-_____________________________________________________________________
-Description:
-
-Match Wall: Top and Base constraints
-_____________________________________________________________________
-How-to:
-
--> Run the script
--> Select the main wall
--> Select all the wall you would like to match to the main one 
-_____________________________________________________________________
-Last update:
-- [18.07.2021] - V1.0 RELEASE
-- [18.07.2021] - Refactored 
-- [18.07.2021] - Optimized perfomance 
-_____________________________________________________________________
-"""
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> IMPORTS
 from pyrevit import forms, revit
