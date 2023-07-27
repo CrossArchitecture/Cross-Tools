@@ -46,9 +46,7 @@ def move_room_and_tag(tag, room, new_pt):
 def get_corner_choice():
     prompt = "Select the corner for placing the room tags:"
     options = ["Upper Left", "Upper Right", "Lower Left", "Lower Right"]
-    choice_index = forms.CommandLink.get_selected_index(
-        options, prompt, default=None, title=None
-    )
+    choice_index = Revit.UI.TaskDialog.Show("Corner Choice", prompt, Revit.UI.TaskDialogCommonButtons.Buttons1, options)
     return choice_index
 
 with Transaction(doc, __title__) as t:
@@ -60,11 +58,7 @@ with Transaction(doc, __title__) as t:
         room = tag.Room
         room_bb = room.get_BoundingBox(doc.ActiveView)
 
-        if corner_choice == 0:  # Upper Left
-            offset_distance = XYZ(OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
-            corner_point = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
-
-        elif corner_choice == 1:  # Upper Right
+        if corner_choice == 1:  # Upper Right
             offset_distance = XYZ(-OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
             corner_point = XYZ(room_bb.Max.X, room_bb.Max.Y, room_bb.Min.Z)
 
@@ -75,6 +69,10 @@ with Transaction(doc, __title__) as t:
         elif corner_choice == 3:  # Lower Right
             offset_distance = XYZ(-OFFSET_DISTANCE_FEET, OFFSET_DISTANCE_FEET, 0)
             corner_point = XYZ(room_bb.Max.X, room_bb.Min.Y, room_bb.Min.Z)
+
+        else:  # Default to Upper Left or for any other invalid input
+            offset_distance = XYZ(OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
+            corner_point = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
 
         room_corner_with_offset = corner_point + offset_distance
         move_room_and_tag(tag, room, room_corner_with_offset)
