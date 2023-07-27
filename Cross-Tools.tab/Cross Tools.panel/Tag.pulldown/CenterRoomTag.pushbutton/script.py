@@ -1,18 +1,6 @@
 # -*- coding: utf-8 -*-
 __title__   = "Center Room Tags"
-__author__  = "Erich Domme"
-__version__ = "Version 1.0"
-__doc__ = """Version = 1.0
-_____________________________________________________________________
-Description:
-WIP:
-Move your existing tags to the center of the room, 
-together with reference of your Room.
-_____________________________________________________________________
-How-to:
--> Click on Button
-_____________________________________________________________________
-Author:  Erich Domme"""
+
 
 # ╦╔╦╗╔═╗╔═╗╦═╗╔╦╗╔═╗
 # ║║║║╠═╝║ ║╠╦╝ ║ ╚═╗
