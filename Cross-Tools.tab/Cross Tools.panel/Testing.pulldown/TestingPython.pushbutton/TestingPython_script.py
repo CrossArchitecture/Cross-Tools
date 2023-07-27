@@ -24,7 +24,7 @@ all_room_tags = FilteredElementCollector(doc, doc.ActiveView.Id)\
 step = 2 # INTERNAL UNITS IN FEET
 
 
-OFFSET_DISTANCE_FEET = 0.5  # Offset distance in feet
+OFFSET_DISTANCE_FEET = 1.64042  # Offset distance in feet
 
 def move_room_and_tag(tag, room, new_pt):
     """Function to move both Room and Tag Locations, if they are not part of the group.
