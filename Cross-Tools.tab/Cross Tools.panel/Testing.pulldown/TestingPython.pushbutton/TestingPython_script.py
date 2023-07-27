@@ -46,8 +46,24 @@ def move_room_and_tag(tag, room, new_pt):
 def get_corner_choice():
     prompt = "Select the corner for placing the room tags:"
     options = ["Upper Left", "Upper Right", "Lower Left", "Lower Right"]
-    choice_index = Revit.UI.TaskDialog.Show("Corner Choice", prompt, Revit.UI.TaskDialogCommonButtons.Buttons1, options)
-    return choice_index
+    dialog = TaskDialog("Corner Choice")
+    dialog.MainInstruction = prompt
+    for option in options:
+        dialog.AddCommandLink(TaskDialogCommandLinkId.CommandLink1, option)
+
+    result = dialog.Show()
+
+    if result == TaskDialogResult.CommandLink1:
+        return TaskDialogResult.CommandLink1
+    elif result == TaskDialogResult.CommandLink2:
+        return TaskDialogResult.CommandLink2
+    elif result == TaskDialogResult.CommandLink3:
+        return TaskDialogResult.CommandLink3
+    elif result == TaskDialogResult.CommandLink4:
+        return TaskDialogResult.CommandLink4
+    else:
+        # Default to Upper Left or for any other invalid input
+        return TaskDialogResult.CommandLink1
 
 with Transaction(doc, __title__) as t:
     t.Start()
@@ -58,15 +74,19 @@ with Transaction(doc, __title__) as t:
         room = tag.Room
         room_bb = room.get_BoundingBox(doc.ActiveView)
 
-        if corner_choice == 1:  # Upper Right
+        if corner_choice == TaskDialogResult.CommandLink1:  # Upper Left
+            offset_distance = XYZ(OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
+            corner_point = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
+
+        elif corner_choice == TaskDialogResult.CommandLink2:  # Upper Right
             offset_distance = XYZ(-OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
             corner_point = XYZ(room_bb.Max.X, room_bb.Max.Y, room_bb.Min.Z)
 
-        elif corner_choice == 2:  # Lower Left
+        elif corner_choice == TaskDialogResult.CommandLink3:  # Lower Left
             offset_distance = XYZ(OFFSET_DISTANCE_FEET, OFFSET_DISTANCE_FEET, 0)
             corner_point = XYZ(room_bb.Min.X, room_bb.Min.Y, room_bb.Min.Z)
 
-        elif corner_choice == 3:  # Lower Right
+        elif corner_choice == TaskDialogResult.CommandLink4:  # Lower Right
             offset_distance = XYZ(-OFFSET_DISTANCE_FEET, OFFSET_DISTANCE_FEET, 0)
             corner_point = XYZ(room_bb.Max.X, room_bb.Min.Y, room_bb.Min.Z)
 
