@@ -46,8 +46,10 @@ def move_room_and_tag(tag, room, new_pt):
 def get_corner_choice():
     prompt = "Select the corner for placing the room tags:"
     options = ["Upper Left", "Upper Right", "Lower Left", "Lower Right"]
-    choice = forms.CommandSwitchWindow.show(prompt, options)
-    return choice
+    choice_index = forms.CommandLink.get_selected_index(
+        options, prompt, default=None, title=None
+    )
+    return choice_index
 
 with Transaction(doc, __title__) as t:
     t.Start()
