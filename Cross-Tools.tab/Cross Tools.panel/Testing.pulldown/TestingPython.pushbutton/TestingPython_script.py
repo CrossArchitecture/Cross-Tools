@@ -24,6 +24,8 @@ all_room_tags = FilteredElementCollector(doc, doc.ActiveView.Id)\
 step = 2 # INTERNAL UNITS IN FEET
 
 
+OFFSET_DISTANCE_FEET = 0.5  # Offset distance in feet
+
 def move_room_and_tag(tag, room, new_pt):
     """Function to move both Room and Tag Locations, if they are not part of the group.
     :param tag:     Room Tag
@@ -47,6 +49,8 @@ with Transaction(doc, __title__) as t:
         room = tag.Room
         room_bb = room.get_BoundingBox(doc.ActiveView)
         room_upper_left = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
-        move_room_and_tag(tag, room, room_upper_left)
+        offset_distance = XYZ(-OFFSET_DISTANCE_FEET, OFFSET_DISTANCE_FEET, 0)
+        room_upper_left_with_offset = room_upper_left + offset_distance
+        move_room_and_tag(tag, room, room_upper_left_with_offset)
 
     t.Commit()
