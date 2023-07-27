@@ -49,9 +49,9 @@ with Transaction(doc, __title__) as t:
     for tag in all_room_tags:
         room = tag.Room
         room_bb = room.get_BoundingBox(doc.ActiveView)
-        room_upper_left = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
-        offset_distance = XYZ(OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
-        room_upper_left_with_offset = room_upper_left + offset_distance
-        move_room_and_tag(tag, room, room_upper_left_with_offset)
+        room_upper_right = XYZ(room_bb.Max.X, room_bb.Max.Y, room_bb.Min.Z)
+        offset_distance = XYZ(-OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
+        room_upper_right_with_offset = room_upper_right + offset_distance
+        move_room_and_tag(tag, room, room_upper_right_with_offset)
 
     t.Commit()
