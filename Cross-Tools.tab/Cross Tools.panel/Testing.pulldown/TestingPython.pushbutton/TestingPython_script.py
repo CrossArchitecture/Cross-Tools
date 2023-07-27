@@ -7,6 +7,7 @@ __title__   = "Center Room Tags"
 # ╩╩ ╩╩  ╚═╝╩╚═ ╩ ╚═╝
 #==================================================
 from Autodesk.Revit.DB import *
+from Autodesk.Revit.UI import TaskDialog
 
 # ╦  ╦╔═╗╦═╗╦╔═╗╔╗ ╦  ╔═╗╔═╗
 # ╚╗╔╝╠═╣╠╦╝║╠═╣╠╩╗║  ║╣ ╚═╗
@@ -44,57 +45,45 @@ def move_room_and_tag(tag, room, new_pt):
 #==================================================
 
 def get_corner_choice():
-    prompt = "Select the corner for placing the room tags:"
-    options = ["Upper Left", "Upper Right", "Lower Left", "Lower Right"]
-    dialog = TaskDialog("Corner Choice")
-    dialog.MainInstruction = prompt
-    for option in options:
-        dialog.AddCommandLink(TaskDialogCommandLinkId.CommandLink1, option)
-
+    """Prompts the user to choose one of the four corners for the offset."""
+    dialog = TaskDialog("Choose Corner")
+    dialog.MainInstruction = "Select the corner to move the tags with an offset:"
+    dialog.AddCommandLink(TaskDialogCommandLinkId.CommandLink1, "Upper Left")
+    dialog.AddCommandLink(TaskDialogCommandLinkId.CommandLink2, "Upper Right")
+    dialog.AddCommandLink(TaskDialogCommandLinkId.CommandLink3, "Lower Left")
+    dialog.AddCommandLink(TaskDialogCommandLinkId.CommandLink4, "Lower Right")
     result = dialog.Show()
 
     if result == TaskDialogResult.CommandLink1:
-        return TaskDialogResult.CommandLink1
+        return 1
     elif result == TaskDialogResult.CommandLink2:
-        return TaskDialogResult.CommandLink2
+        return 2
     elif result == TaskDialogResult.CommandLink3:
-        return TaskDialogResult.CommandLink3
+        return 3
     elif result == TaskDialogResult.CommandLink4:
-        return TaskDialogResult.CommandLink4
+        return 4
     else:
-        # Default to Upper Left or for any other invalid input
-        return TaskDialogResult.CommandLink1
+        return None
 
 with Transaction(doc, __title__) as t:
     t.Start()
 
     corner_choice = get_corner_choice()
 
-    for tag in all_room_tags:
-        room = tag.Room
-        room_bb = room.get_BoundingBox(doc.ActiveView)
+    if corner_choice is not None:
+        for tag in all_room_tags:
+            room = tag.Room
+            room_bb = room.get_BoundingBox(doc.ActiveView)
+            offset_distance = OFFSET_DISTANCE_FEET
+            offset_x = -offset_distance if corner_choice in [1, 3] else offset_distance
+            offset_y = offset_distance if corner_choice in [1, 2] else -offset_distance
 
-        if corner_choice == TaskDialogResult.CommandLink1:  # Upper Left
-            offset_distance = XYZ(OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
-            corner_point = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
+            if corner_choice in [1, 2]:
+                room_corner = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
+            else:
+                room_corner = XYZ(room_bb.Max.X, room_bb.Min.Y, room_bb.Min.Z)
 
-        elif corner_choice == TaskDialogResult.CommandLink2:  # Upper Right
-            offset_distance = XYZ(-OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
-            corner_point = XYZ(room_bb.Max.X, room_bb.Max.Y, room_bb.Min.Z)
-
-        elif corner_choice == TaskDialogResult.CommandLink3:  # Lower Left
-            offset_distance = XYZ(OFFSET_DISTANCE_FEET, OFFSET_DISTANCE_FEET, 0)
-            corner_point = XYZ(room_bb.Min.X, room_bb.Min.Y, room_bb.Min.Z)
-
-        elif corner_choice == TaskDialogResult.CommandLink4:  # Lower Right
-            offset_distance = XYZ(-OFFSET_DISTANCE_FEET, OFFSET_DISTANCE_FEET, 0)
-            corner_point = XYZ(room_bb.Max.X, room_bb.Min.Y, room_bb.Min.Z)
-
-        else:  # Default to Upper Left or for any other invalid input
-            offset_distance = XYZ(OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
-            corner_point = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
-
-        room_corner_with_offset = corner_point + offset_distance
-        move_room_and_tag(tag, room, room_corner_with_offset)
+            room_corner_with_offset = XYZ(room_corner.X + offset_x, room_corner.Y + offset_y, room_corner.Z)
+            move_room_and_tag(tag, room, room_corner_with_offset)
 
     t.Commit()
