@@ -43,15 +43,38 @@ def move_room_and_tag(tag, room, new_pt):
 # ╩ ╩╩ ╩╩╝╚╝ MAIN
 #==================================================
 
+def get_corner_choice():
+    prompt = "Select the corner for placing the room tags:"
+    options = ["Upper Left", "Upper Right", "Lower Left", "Lower Right"]
+    choice = forms.CommandSwitchWindow.show(prompt, options)
+    return choice
+
 with Transaction(doc, __title__) as t:
     t.Start()
+
+    corner_choice = get_corner_choice()
 
     for tag in all_room_tags:
         room = tag.Room
         room_bb = room.get_BoundingBox(doc.ActiveView)
-        room_upper_right = XYZ(room_bb.Max.X, room_bb.Max.Y, room_bb.Min.Z)
-        offset_distance = XYZ(-OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
-        room_upper_right_with_offset = room_upper_right + offset_distance
-        move_room_and_tag(tag, room, room_upper_right_with_offset)
+
+        if corner_choice == 0:  # Upper Left
+            offset_distance = XYZ(OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
+            corner_point = XYZ(room_bb.Min.X, room_bb.Max.Y, room_bb.Min.Z)
+
+        elif corner_choice == 1:  # Upper Right
+            offset_distance = XYZ(-OFFSET_DISTANCE_FEET, -OFFSET_DISTANCE_FEET, 0)
+            corner_point = XYZ(room_bb.Max.X, room_bb.Max.Y, room_bb.Min.Z)
+
+        elif corner_choice == 2:  # Lower Left
+            offset_distance = XYZ(OFFSET_DISTANCE_FEET, OFFSET_DISTANCE_FEET, 0)
+            corner_point = XYZ(room_bb.Min.X, room_bb.Min.Y, room_bb.Min.Z)
+
+        elif corner_choice == 3:  # Lower Right
+            offset_distance = XYZ(-OFFSET_DISTANCE_FEET, OFFSET_DISTANCE_FEET, 0)
+            corner_point = XYZ(room_bb.Max.X, room_bb.Min.Y, room_bb.Min.Z)
+
+        room_corner_with_offset = corner_point + offset_distance
+        move_room_and_tag(tag, room, room_corner_with_offset)
 
     t.Commit()
