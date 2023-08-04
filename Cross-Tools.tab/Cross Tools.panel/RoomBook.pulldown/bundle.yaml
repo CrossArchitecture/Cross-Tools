@@ -1,5 +1,6 @@
 layout:
   - 01GenerateParameter
+  - 02AssignDoorsAndWindowsToRooms
 
 title: Room Book
 
