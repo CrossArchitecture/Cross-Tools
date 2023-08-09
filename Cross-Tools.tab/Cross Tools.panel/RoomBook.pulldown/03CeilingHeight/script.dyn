@@ -8095,14 +8095,7 @@
       ]
     }
   ],
-  "Bindings": [
-    {
-      "NodeId": "8156b1e9-1c0c-449f-b7f5-95a8dbc99040",
-      "Binding": {
-        "ByGeometries_InClassDecl-1_InFunctionScope-1_Instance0_8156b1e9-1c0c-449f-b7f5-95a8dbc99040": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuNi4xLjg3ODYlMkMlMjBDdWx0dXJlJTNEbmV1dHJhbCUyQyUyMFB1YmxpY0tleVRva2VuJTNEbnVsbCI+DQo8TnVtYmVyT2ZFbGVtZW50cz4xPC9OdW1iZXJPZkVsZW1lbnRzPg0KPEJhc2UtMF9IYXNEYXRhPnRydWU8L0Jhc2UtMF9IYXNEYXRhPg0KPEJhc2UtMF9EYXRhIGlkPSJyZWYtMyI+UEZOUFFWQXRSVTVXT2tWdWRtVnNiM0JsSUhodGJHNXpPbmh6YVQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0V0YVc1emRHRnVZMlVpSUhodGJHNXpPbmh6WkQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0VpSUhodGJHNXpPbE5QUVZBdFJVNURQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SWdlRzFzYm5NNlUwOUJVQzFGVGxZOUltaDBkSEE2THk5elkyaGxiV0Z6TG5odGJITnZZWEF1YjNKbkwzTnZZWEF2Wlc1MlpXeHZjR1V2SWlCNGJXeHVjenBqYkhJOUltaDBkSEE2THk5elkyaGxiV0Z6TG0xcFkzSnZjMjltZEM1amIyMHZjMjloY0M5bGJtTnZaR2x1Wnk5amJISXZNUzR3SWlCVFQwRlFMVVZPVmpwbGJtTnZaR2x1WjFOMGVXeGxQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SStEUW84VTA5QlVDMUZUbFk2UW05a2VUNE5DanhoTVRwVFpYSnBZV3hwZW1GaWJHVkpaQ0JwWkQwaWNtVm1MVEVpSUhodGJHNXpPbUV4UFNKb2RIUndPaTh2YzJOb1pXMWhjeTV0YVdOeWIzTnZablF1WTI5dEwyTnNjaTl1YzJGemMyVnRMMUpsZG1sMFUyVnlkbWxqWlhNdVVHVnljMmx6ZEdWdVkyVXZVbVYyYVhSVFpYSjJhV05sY3lVeVF5VXlNRlpsY25OcGIyNGxNMFF5TGpZdU1TNDRPRFV3SlRKREpUSXdRM1ZzZEhWeVpTVXpSRzVsZFhSeVlXd2xNa01sTWpCUWRXSnNhV05MWlhsVWIydGxiaVV6Ukc1MWJHd2lQZzBLUEhOMGNtbHVaMGxFSUdsa1BTSnlaV1l0TXlJK05qUTBOMlV6TVRFdE1XUmxaaTAwTTJReExXRmtNMkl0Tm1JeVlUQXhZVGcxWWpaa0xUQXlNV0UxTjJKa1BDOXpkSEpwYm1kSlJENE5DanhwYm5SSlJENHpOVEk0TURneU9Ud3ZhVzUwU1VRK0RRbzhMMkV4T2xObGNtbGhiR2w2WVdKc1pVbGtQZzBLUEM5VFQwRlFMVVZPVmpwQ2IyUjVQZzBLUEM5VFQwRlFMVVZPVmpwRmJuWmxiRzl3WlQ0TkNnPT08L0Jhc2UtMF9EYXRhPg0KPEJhc2UtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
-      }
-    }
-  ],
+  "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
@@ -10019,18 +10012,18 @@
     "Annotations": [
       {
         "Id": "97a82188099340adb27c152bda3769bd",
-        "Title": "Choose Setup View, clean up View before execution",
+        "Title": "Choose Setup View, clean up View before execution - Finish Room Height",
         "Nodes": [
           "693be27c292b464580ef24080a9d5e88"
         ],
         "Left": -1943.8863330354748,
-        "Top": 873.14931857049532,
+        "Top": 787.14931857049532,
         "Width": 234.0,
-        "Height": 276.0,
+        "Height": 362.0,
         "FontSize": 36.0,
         "InitialTop": 1056.1493185704953,
         "InitialHeight": 145.0,
-        "TextblockHeight": 173.0,
+        "TextblockHeight": 259.0,
         "Background": "#FFC1D676"
       },
       {
@@ -10118,7 +10111,7 @@
         "Height": 571.5548092746244,
         "FontSize": 36.0,
         "InitialTop": 1012.2304393131328,
-        "InitialHeight": 460.70229384061508,
+        "InitialHeight": 544.5548092746244,
         "TextblockHeight": 43.0,
         "Background": "#FFFF7BAC"
       },
@@ -10150,7 +10143,7 @@
         "Height": 725.37881077409861,
         "FontSize": 36.0,
         "InitialTop": 1197.2724290192718,
-        "InitialHeight": 736.86962962737425,
+        "InitialHeight": 724.37881077409861,
         "TextblockHeight": 43.0,
         "Background": "#FFFF7BAC"
       },
@@ -10192,7 +10185,7 @@
         "Height": 274.495095134238,
         "FontSize": 36.0,
         "InitialTop": 2282.9913398636281,
-        "InitialHeight": 200.74012853858289,
+        "InitialHeight": 247.495095134238,
         "TextblockHeight": 43.0,
         "Background": "#FFFF7BAC"
       },
@@ -10238,18 +10231,18 @@
       },
       {
         "Id": "a7bf8d5705274c93a1e2fd81c3650fca",
-        "Title": "Choose Setup View, clean up View before execution",
+        "Title": "Choose Setup View, clean up View before execution - Raw Room height",
         "Nodes": [
           "6482af15cfd04fd1823bc250d76d20d7"
         ],
         "Left": -1998.1655248348197,
-        "Top": 3115.0593584276749,
+        "Top": 3029.0593584276749,
         "Width": 206.0,
-        "Height": 319.0,
+        "Height": 405.0,
         "FontSize": 36.0,
         "InitialTop": 3341.0593584276749,
         "InitialHeight": 145.0,
-        "TextblockHeight": 216.0,
+        "TextblockHeight": 302.0,
         "Background": "#FFC1D676"
       },
       {
@@ -10374,8 +10367,8 @@
         "Background": "#FFFF7BAC"
       }
     ],
-    "X": -6912.5674442520949,
-    "Y": -1314.4580064743159,
-    "Zoom": 1.933993264800111
+    "X": 1092.1157097705677,
+    "Y": -57.467749354944317,
+    "Zoom": 0.27463063811236221
   }
 }
