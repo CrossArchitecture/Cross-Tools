@@ -3262,14 +3262,29 @@
       ],
       "Replication": "Disabled",
       "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "8bd1797ae0b3413e82871fc08d5bc8c4",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "69c9f3d9121a4a988f34a55c5346ab4d",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
     }
   ],
   "Connectors": [
-    {
-      "Start": "c0690d8dbbb04b41a820f3c4bd2084a1",
-      "End": "b47f5ae6a8174ffea6f802caf09632c4",
-      "Id": "46d2045893c64f8b934bda55a3f7b6dd"
-    },
     {
       "Start": "c0690d8dbbb04b41a820f3c4bd2084a1",
       "End": "573809b9d4f74c9384a488ed57858aec",
@@ -3799,6 +3814,11 @@
       "Start": "4f10b57fb84140cca6eec0671b331faa",
       "End": "55574cc67d84441fa657095ef9187f3e",
       "Id": "cbcc5c7891f04b45857da3306b784f4a"
+    },
+    {
+      "Start": "69c9f3d9121a4a988f34a55c5346ab4d",
+      "End": "b47f5ae6a8174ffea6f802caf09632c4",
+      "Id": "9906112da9a242c3b7880ffaca200ee0"
     }
   ],
   "Dependencies": [
@@ -4660,6 +4680,16 @@
         "Excluded": false,
         "X": -4656.7642016460459,
         "Y": 3022.6944995692861
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "8bd1797ae0b3413e82871fc08d5bc8c4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -5095.726374065337,
+        "Y": 3246.7714894784558
       }
     ],
     "Annotations": [
@@ -4689,12 +4719,13 @@
         "Id": "980cc2d0f251482e84efcf36950178f3",
         "Title": "Activate",
         "Nodes": [
-          "19e0bbd2fe7f4fa7b4d019b8b55bfabc"
+          "19e0bbd2fe7f4fa7b4d019b8b55bfabc",
+          "8bd1797ae0b3413e82871fc08d5bc8c4"
         ],
         "Left": -5107.94967675335,
         "Top": 3138.09326433522,
-        "Width": 155.0,
-        "Height": 107.0,
+        "Width": 157.22330268801306,
+        "Height": 176.67822514323598,
         "FontSize": 24.0,
         "InitialTop": 3177.09326433522,
         "InitialHeight": 145.0,
@@ -4730,8 +4761,8 @@
         "Background": "#FFFFA07A"
       }
     ],
-    "X": 4053.5264950031842,
-    "Y": -1962.8710020905662,
-    "Zoom": 0.74046468171236168
+    "X": 1912.8953136354721,
+    "Y": -283.53807667395313,
+    "Zoom": 0.31070699215888803
   }
 }
